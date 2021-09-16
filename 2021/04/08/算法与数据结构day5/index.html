@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>算法与数据结构day5 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="算法与数据结构day5">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-08 21:51" pubdate>
+        2021年4月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      820 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">算法与数据结构day5</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：5 个月前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="day5-字典map"><a href="#day5-字典map" class="headerlink" title="day5 字典map"></a>day5 字典map</h2><p>字典：用键值对对方式存储数据，与集合一样是去重的具有唯一性。<br>1.增：m.set(key,val)<br>2.删：m.delete(key)     m.clear()<br>3.改：m.set(key,newval)<br>4.查:m.get(key)</p>
+<h3 id="两数之和-题号：1"><a href="#两数之和-题号：1" class="headerlink" title="两数之和 题号：1"></a>两数之和 题号：1</h3><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：</p>
+<p>输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。<br>示例 2：</p>
+<p>输入：nums = [3,2,4], target = 6<br>输出：[1,2]<br>示例 3：</p>
+<p>输入：nums = [3,3], target = 6<br>输出：[0,1]
+ </p>
+<p>提示：</p>
+<p>2 &lt;= nums.length &lt;= 103<br>-109 &lt;= nums[i] &lt;= 109<br>-109 &lt;= target &lt;= 109<br>只会存在一个有效答案</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;<br>    <span class="hljs-keyword">const</span> map=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()<span class="hljs-comment">//将数据存储在Map数据类型中，（值，下标）</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;<span class="hljs-comment">//遍历数组</span><br>        <span class="hljs-keyword">let</span> n1=nums[i]      <br>        <span class="hljs-keyword">let</span> n2=target-n1        <span class="hljs-comment">//取到目标值</span><br>        <span class="hljs-keyword">if</span>(map.has(n2))&#123;        <br>            <span class="hljs-keyword">return</span> [map.get(n2),i]  <span class="hljs-comment">//有对应的目标值，则返回两个下标</span><br>        &#125;<br>        map.set(n1,i)       <span class="hljs-comment">//没有则存入map中，键为nums[i],值为i</span><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>思路：用一个字典存储数据，我们查找字典中是否有需要的值，如果有，就返回这个键所对应的下标（存储的值）。</p>
+<h3 id="无重复字符的最长子串-题号：3"><a href="#无重复字符的最长子串-题号：3" class="headerlink" title="无重复字符的最长子串 题号：3"></a>无重复字符的最长子串 题号：3</h3><p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<p>示例 1:</p>
+<p>输入: s = “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
+<p>输入: s = “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
+<p>输入: s = “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。<br>示例 4:</p>
+<p>输入: s = “”<br>输出: 0
+ </p>
+<p>提示：</p>
+<p>0 &lt;= s.length &lt;= 5 * 104<br>s 由英文字母、数字、符号和空格组成</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs arduino">var lengthOfLongestSubstring = <span class="hljs-built_in">function</span>(s) &#123;<br>   let l=<span class="hljs-number">0</span>;<span class="hljs-comment">//记录左指针</span><br>   <span class="hljs-keyword">const</span> map=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();<span class="hljs-comment">//建立一个map来储存结果</span><br>   let max=<span class="hljs-number">0</span>;<span class="hljs-comment">//最大长度</span><br>   <span class="hljs-keyword">for</span>(let r=<span class="hljs-number">0</span>;r&lt;s.length;r++)&#123;<br>       <span class="hljs-keyword">if</span>(map.<span class="hljs-built_in">has</span>(s[r])&amp;&amp; map.<span class="hljs-built_in">get</span>(s[r])&gt;=l)&#123;<span class="hljs-comment">//如果滑动窗口里有s[r]</span><br>           l=map.<span class="hljs-built_in">get</span>(s[r])+<span class="hljs-number">1</span>;               <span class="hljs-comment">//那么让左指针移动到相同元素的下一位</span><br>       &#125;<br>       max=Math.<span class="hljs-built_in">max</span>(max,r-l+<span class="hljs-number">1</span>);             <span class="hljs-comment">//不断比较记录最长窗口</span><br>       map.<span class="hljs-built_in">set</span>(s[r],r);                     <span class="hljs-comment">//存入数据</span><br>   &#125;<br>   <span class="hljs-keyword">return</span> max;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>思路：这道题的解法是滑动窗口，通过左右指针检测最长字符串，并用map记录字符和对应的下标。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/09/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法与数据结构day6</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/07/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day4/">
+                        <span class="hidden-mobile">算法与数据结构day4</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

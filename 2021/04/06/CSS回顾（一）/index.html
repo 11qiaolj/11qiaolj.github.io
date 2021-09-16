@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>CSS回顾（一） - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CSS回顾（一）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-06 21:57" pubdate>
+        2021年4月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CSS回顾（一）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="CSS知识回顾（一）"><a href="#CSS知识回顾（一）" class="headerlink" title="CSS知识回顾（一）"></a>CSS知识回顾（一）</h1><p>css基本知识及操作</p>
+<h3 id="css选择器及其权重"><a href="#css选择器及其权重" class="headerlink" title="css选择器及其权重"></a>css选择器及其权重</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">选择器： ID选择器     类选择器     标签<span class="hljs-regexp">/  伪类 /</span>属性选择器     通配符选择器<br>写法：   <span class="hljs-string">&#x27;#类名&#x27;</span>     <span class="hljs-string">&#x27;.类名&#x27;</span>     ‘标签名’<span class="hljs-regexp">/ : /</span><span class="hljs-string">&#x27;[属性名]&#x27;</span>         *       <br>权重：    <span class="hljs-number">100</span>          <span class="hljs-number">10</span>              <span class="hljs-number">1</span>                      <span class="hljs-number">0</span>             <br></code></pre></td></tr></table></figure>
+<p>还有行内样式权重为1000。<br>继承没有权重。<br>遇到!important则是最大，大于一切。</p>
+<h3 id="css中的值和单位"><a href="#css中的值和单位" class="headerlink" title="css中的值和单位"></a>css中的值和单位</h3><p>1.数字：整数，百分数<br>2.颜色：颜色名，十六进制，RGB，RGBA等<br>3.长度：<br>绝对单位：px为最常用的单位，基于设备的像素点。<br>相对单位：%，em，rem，vw较为常用，大多应用于响应式布局，即在窗口大小发生改变时，这些单位的长度也会随之改变，这就防止了因设备更换而造成的网页布局的混乱。</p>
+<h3 id="文本属性："><a href="#文本属性：" class="headerlink" title="文本属性："></a>文本属性：</h3><p>常用文本属性：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs scss">属性                      效果              常用值<br><span class="hljs-attribute">text-indent</span>             首行缩进            <span class="hljs-selector-tag">em</span>字宽<br>text-ailgn              文本对齐            center局中对齐，justify两端对齐<br>vertical-ailgn          垂直对齐            middle控制图片与文本中对齐<br><span class="hljs-attribute">word-spacing</span>            字间隔              px长度单位<br><span class="hljs-attribute">letter-spacing</span>          字母间隔            px长度单位<br><span class="hljs-attribute">text-transform</span>          大小写              capitalize首字母大写<br><span class="hljs-attribute">text-decoration</span>         修饰线              underline下划线，<span class="hljs-attribute">none</span>无<br><span class="hljs-attribute">text-shadow</span>             文本阴影            颜色，左右上下，模糊<br><span class="hljs-attribute">white-space</span>             空白处理            nowrap不换行，pre不忽略空格            <br><span class="hljs-attribute">direction</span>               文本方向            ltr正序，rtl倒序<br><span class="hljs-attribute">line-height</span>             行高                1:元素的垂直局中<br></code></pre></td></tr></table></figure>
+<p>常用字体属性：</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs qml">属性                      描述<br><span class="hljs-built_in">font</span>-family             指定字体<br><span class="hljs-built_in">font</span>-weight             字体粗细<br><span class="hljs-built_in">font</span>-<span class="hljs-built_in">size</span>               字体大小<br><span class="hljs-built_in">font</span>-style              是否斜体<br><span class="hljs-built_in">font</span>-<span class="hljs-built_in">variant</span>            字体变形<br></code></pre></td></tr></table></figure>
+
+<h3 id="内联元素和块级元素"><a href="#内联元素和块级元素" class="headerlink" title="内联元素和块级元素"></a>内联元素和块级元素</h3><p>Block：是块级元素，其前后都会有换行符，能设置宽度，高度，margin/padding水平垂直方向都有效。<br>Inline：设置width和height无效，margin在竖直方向上无效，padding在水平方向垂直方向都有效，前后无换行符</p>
+<p>Inline-block：能设置宽度高度，margin/padding水平垂直方向 都有效，前后无换行符</p>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>盒子模型由：内容content，内边距paddig，边框border，外边距margin组成。<br><img src="https://11qiaolj.github.io/2021/06/06/%E5%9B%BE%E7%89%87/css1.jpeg" srcset="/img/loading.gif" lazyload><br>通常我们设置标准盒子模型（W3C盒子模型）的宽度时，要考虑他的宽度是：<br>width=content（设定宽度）+padding+border。<br>设定的宽度与实际的宽度不符。这让我们在使用时需要计算。<br>css3提供了一种新方法：<br><code>box-sizing:border-box；</code><br>可以让我们盒子的宽度就是我们所设定的width，不会因内边距和边框而撑开。<br>我们也称这种盒模型叫IE盒子模型或怪异盒子模型。</p>
+<h3 id="margin常见问题"><a href="#margin常见问题" class="headerlink" title="margin常见问题"></a>margin常见问题</h3><h5 id="1-外边距合并和传递"><a href="#1-外边距合并和传递" class="headerlink" title="1.外边距合并和传递"></a>1.外边距合并和传递</h5><p>当我们在设置两个上下排列的p标签的上下外边距时，会发生外边距合并（重叠）。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>.p&#123;<br><span class="css">    <span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">10px</span>;</span><br><span class="css">    <span class="hljs-attribute">margin-top</span>:<span class="hljs-number">15px</span>;</span><br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>段落1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>段落2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>当这样两个p标签上下排列时，他们的间距并不是：15+10=25px。<br>会发生外边距合并，他们中间将只有15px（较大者）的距离。<br>同时，他们中的空标签，会被忽略，不会影响两个有内容的标签。</p>
+<h5 id="2-负值的margin"><a href="#2-负值的margin" class="headerlink" title="2.负值的margin"></a>2.负值的margin</h5><p>我们在操作中有时会给margin加一个负值，目的是让盒子朝我们期望的方向移动。<br>当为盒子添加margin-top/left：负数；的时候，这个盒子会朝上或左移动。<br>但我们给盒子添加margin-bottom/right：负数；时，这个盒子之后的元素会向着这个盒子的位置移动。（自身宽高缩小）<br>这个应用会在之后的双飞翼和圣杯布局中实现。</p>
+<h4 id="3-BFC"><a href="#3-BFC" class="headerlink" title="3.BFC"></a>3.BFC</h4><p><em>嵌套元素的外边距塌陷</em>：<br>我们在为子元素加一个margin时，期待的效果是子元素可以与父元素隔开，而事实却不会这样。<br>为了解决这样的现象，我们有几种办法：<br>1.加一个透明边框。<br>2.使用父元素padding的方式来隔开父子。<br>3.父元素overflow:hidden。</p>
+<p>第3个解决方案就是BFC<br>BFC是块级格式化上下文。可以为内容添加独立的渲染区域。<br>BFC的常见应用有：<br>1.清除浮动。<br>2.独立渲染。<br>3.解决外边距塌陷。</p>
+<p>形成BFC的几种条件：<br>1.浮动元素————float不是none<br>2.定位元素————position是absolute或fixed<br>3.块级元素————overflow不是visible<br>4.行内快元素，flex元素</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-selector-class">.clearfix</span> :after&#123;<br>    content:<span class="hljs-string">&#x27;&#x27;</span>;<br>    <span class="hljs-attribute">height</span>:<span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">overflow</span>:hidden;<br>    <span class="hljs-attribute">clear</span>:both;<br>    <span class="hljs-attribute">display</span>:block;<br>&#125;<br><span class="hljs-selector-class">.clearfix</span>&#123;<br>    *zoom:<span class="hljs-number">1</span>;        <span class="hljs-comment">//浏览器兼容性</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="水平局中及垂直居中方式"><a href="#水平局中及垂直居中方式" class="headerlink" title="水平局中及垂直居中方式"></a>水平局中及垂直居中方式</h3><h4 id="水平居中方式："><a href="#水平居中方式：" class="headerlink" title="水平居中方式："></a>水平居中方式：</h4><p>1.想让文字居中时，设置其所在元素的text-align:center;就可以了。<br>2.让元素在父容器内居中，可以设置margin：0 auto;就是水平居中。<br>3.还可以使用定位让元素居中：<br>利用position：absoulate;left:50%;<br>这时，该元素的左边框恰好在父元素的中线上，<br>我们只需要为他添加一个<code>margin-left:-自身宽度的一半</code>;或<code>transform: translateX(-50%);</code>就可以让他左移自身宽度的一半，就实现了水平居中。</p>
+<h4 id="垂直居中方式："><a href="#垂直居中方式：" class="headerlink" title="垂直居中方式："></a>垂直居中方式：</h4><p>1.通常我们通过line-height:元素高度;这样的方式对行内的元素和文字垂直居中。<br>2.我们在定位图片和文字的相对位置时，也使用vertical-align：middle来使文字与图片中线对齐。<br>利用vertical同时也能使多行文字垂直局中。<br>3.我们同样可以用水平局中的3，定位+位移的方式实现垂直局中。</p>
+<p>补充：同样可以在flex，grid布局时利用这两种布局的特性实现元素的居中，我会在后面的文章中详细介绍这两种布局。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><h4 id="一个选择器中只能使用一个伪元素"><a href="#一个选择器中只能使用一个伪元素" class="headerlink" title="一个选择器中只能使用一个伪元素"></a>一个选择器中只能使用一个伪元素</h4>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/">知识回顾</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/07/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法与数据结构day4</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/06/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day3/">
+                        <span class="hidden-mobile">算法与数据结构day3</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

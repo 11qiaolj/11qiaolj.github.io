@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>Js回顾（五） - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Js回顾（五）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-17 13:15" pubdate>
+        2021年5月17日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Js回顾（五）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：10 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Js回顾（五）"><a href="#Js回顾（五）" class="headerlink" title="Js回顾（五）"></a>Js回顾（五）</h1><p>关于js中的零散知识的整理</p>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>我们知道，let和var的区别之一，就是变量提升。<br>var会将变量提升到全局的开始，如果在var之前调用var声明的变量，会出现undefined的情况。<br>而let，则存在暂时性死区，即如果在let前调用let声明的变量，会报错。</p>
+<p>但是，除了var有变量提升，function也存在“函数提升”。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">f</span><span class="hljs-params">()</span></span><br><span class="hljs-selector-tag">var</span> f=function()&#123;<br>    console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">&quot;123&quot;</span>)<br>&#125;<br><span class="hljs-comment">//会报错 f不是一个函数</span><br></code></pre></td></tr></table></figure>
+<p>var 会把f提升上去，但未定义</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">f</span><span class="hljs-params">()</span></span><br>function f()&#123;<br>    console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">&quot;123&quot;</span>)<br>&#125;<br><span class="hljs-comment">//会输出123</span><br></code></pre></td></tr></table></figure>
+<p>函数会提升到上面<br>再升级一下，var和函数谁更优先呢？：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(a)<br><span class="hljs-comment">//会输出1</span><br></code></pre></td></tr></table></figure>
+<p>函数会被升级到var之前。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;<br><span class="hljs-built_in">console</span>.log(a)  <br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br>&#125;<br><span class="hljs-comment">//输出1</span><br></code></pre></td></tr></table></figure>
+<p>但是！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(a)  <br><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br>&#125;<br><span class="hljs-comment">//输出[function a]</span><br></code></pre></td></tr></table></figure>
+<p>我们奇怪，如果函数升级到var之前，那么输出不应该是undefined吗？<br>其实是，当存在a函数时，var a会被忽略！</p>
+<h3 id="代理Proxy"><a href="#代理Proxy" class="headerlink" title="代理Proxy"></a>代理Proxy</h3><p>proxy是在ES6中被提出的新功能。<br>我们可以知道在Vue3.0中，通过proxy代替之前的<code>Object.defineProperty</code>实现数据响应式的操作。</p>
+<h4 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h4><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs haxe">let obj=&#123;&#125;<br>let <span class="hljs-keyword">new</span><span class="hljs-type">Val</span>=<span class="hljs-string">&#x27;&#x27;</span><br>Object.defineProperty(obj,<span class="hljs-string">&#x27;name&#x27;</span>.&#123;<br>    <span class="hljs-keyword">get</span>()&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span><span class="hljs-type">Val</span><br><span class="hljs-type"></span>    &#125;<br>    <span class="hljs-keyword">set</span>(val)&#123;<br>        <span class="hljs-keyword">new</span><span class="hljs-type">Val</span>=val<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>要注意的是，在使用set方法时，不要直接对属性进行操作，要设置一个“第三者”newVal来设置，否则会无限死循环</p>
+<h4 id="proxy的基本用法"><a href="#proxy的基本用法" class="headerlink" title="proxy的基本用法"></a>proxy的基本用法</h4><p><code>let p=new Proxy(target,handler)</code><br>target代表需要添加代理的对象，handler则是用来自定义对象的拦截操作。<br>设置之后，我们只需要对p添加想添加的属性，就可以作用到target身上。</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sqf">let obj=&#123;<br>    <span class="hljs-built_in">name</span>:<span class="hljs-string">&#x27;xiaoming&#x27;</span><br>&#125;<br>let p=new Proxy(obj,&#123;&#125;)<br>console.<span class="hljs-built_in">log</span>(p.<span class="hljs-built_in">name</span>)<span class="hljs-comment">//输出xiaoming</span><br><br>p.<span class="hljs-built_in">name</span>=<span class="hljs-string">&#x27;hh&#x27;</span><br>console.<span class="hljs-built_in">log</span>(p.<span class="hljs-built_in">name</span>)<span class="hljs-comment">//输出hh</span><br>console.<span class="hljs-built_in">log</span>(obj.<span class="hljs-built_in">name</span>)<span class="hljs-comment">//输出hh</span><br></code></pre></td></tr></table></figure>
+<p>这里，我们使用hasOwnProperty来判断是否是属于自己的属性，依然都会得到true<br>而且，proxy的prototype是indefined，因此不管是obj本身还是代理，都不会instanceof Proxy（会报错）</p>
+<hr>
+<p>在设置过程中，我们可以在Proxy的第二个参数中设置拦截操作<br>通常的拦截方法有：get获取，set设置。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">get</span><span class="hljs-params">(target,prop)</span></span>&#123;&#125;  <span class="hljs-comment">//对象，属性</span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(target,prop,val)</span></span>&#123; 返回布尔值&#125; <span class="hljs-comment">//对象，属性，值</span><br></code></pre></td></tr></table></figure>
+<p>除此之外还有：has，ownKeys，delateProperty,apply,construct等拦截操作</p>
+<p>要注意的是，在使用set方法时，不要直接对属性进行操作，要设置一个“第三者”</p>
+<h3 id="Reflect"><a href="#Reflect" class="headerlink" title="Reflect"></a>Reflect</h3><p>把Object上的一些属性和方法转移到Reflect下面，让Object更规范<br>将Object的操作变成函数行为<br>Reflect的方法与Proxy一一对应</p>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>在实际开发中经常需要用到，=两边模式相同，就可以赋值。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stylus">let <span class="hljs-selector-attr">[a,b,c]</span>=<span class="hljs-selector-attr">[1,2,3]</span><br>console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>,<span class="hljs-selector-tag">b</span>,c)<span class="hljs-comment">//1,2,3</span><br><br>let <span class="hljs-selector-attr">[a,b,c]</span>=<span class="hljs-selector-attr">[1,2,[3,4]</span>]<br>console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>,<span class="hljs-selector-tag">b</span>,c)<span class="hljs-comment">//1,2,[3,4] </span><br><br>let <span class="hljs-selector-attr">[a,b,[c]</span>]=<span class="hljs-selector-attr">[1,2,[3,4]</span>]<br>console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>,<span class="hljs-selector-tag">b</span>,c)<span class="hljs-comment">//1,2,3(4没有赋值)</span><br><br>let <span class="hljs-selector-attr">[a,b,c,d=5]</span>=<span class="hljs-selector-attr">[1,2,3]</span><br>console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>,<span class="hljs-selector-tag">b</span>,c,d)<span class="hljs-comment">//1,2,3,5(没有对应，取默认值)</span><br></code></pre></td></tr></table></figure>
+<p>解构赋值不仅可以用于数组，也能用于对象和字符串。<br>与数组同理，也可使用默认值。</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ceylon"><span class="hljs-comment">//对象：</span><br><span class="hljs-keyword">let</span> user=&#123;<br>    name:<span class="hljs-string">&#x27;huha&#x27;</span>,<br>    age:<span class="hljs-number">14</span><br>&#125;<br><span class="hljs-keyword">let</span> &#123;name,age&#125;=user<br><span class="hljs-comment">//字符串：</span><br><span class="hljs-keyword">let</span> [a,b,c,d,e]=<span class="hljs-string">&#x27;hello&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h3><p>在两个`之间的字符串，可以使用${}这样的方式插入变量。<br>省去了以往字符串用+拼接的方式，让代码更可读。</p>
+<h3 id="map和set"><a href="#map和set" class="headerlink" title="map和set"></a>map和set</h3><h4 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h4><p>是一种无序且唯一的数据结构，在ES6中规定了set这种引用数据类型，代表了集合。<br>集合的一大特点就是，无重复的，我们通常可以通过把array转为set再转为array的方式为数组去重。<br><code>arr2=[...new Set(arr1)];</code><br>set的属性和方法：<br>size长度<br>1.增：add()<br>2.删：delete() clear()清空<br>3.查：has()是否包含</p>
+<p>我们还可以用set.has的方式判断一个数据在集合中是否存在。</p>
+<h4 id="map字典"><a href="#map字典" class="headerlink" title="map字典"></a>map字典</h4><p>用键值对对方式存储数据，与集合一样是去重的具有唯一性。<br>1.增：m.set(key,val)<br>2.删：m.delete(key)     m.clear()<br>3.改：m.set(key,newval)<br>4.查：m.get(key)</p>
+<h4 id="WeakSet和WeakMap"><a href="#WeakSet和WeakMap" class="headerlink" title="WeakSet和WeakMap"></a>WeakSet和WeakMap</h4><p>WeakSet和WeakMap不可以遍历。<br>因为WeakSet和WeakMap中的数据是“弱引用”。<br>由于是弱引用，所以会被垃圾回收机制回收。</p>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><h4 id="新生代算法"><a href="#新生代算法" class="headerlink" title="新生代算法"></a>新生代算法</h4><p>新生代算法为 Scavenge 算法。他将新生代分为两个相等的半空间 from space  与 to space。<br>首先，V8 引擎中的垃圾回收器检测到 from space 空间快达到上限了，此时要进行一次垃圾回收了<br>然后，从根部开始遍历，对所有无法遍历到的对象进行标记，并且复制未被标记的对象到 to空间中<br>最后，清除 from space 中的所有数据，同时将 from space 置为空闲状态，即变成 to space，相应的 to space 变成 from space，俗称翻转。</p>
+<p>这种通过空间换取时间对算法，对于一般对象可以，但是如果有对象常驻内存，就会造成很大的浪费。</p>
+<p>于是就需要动用老生代算法，经过一次from反转过的对象，会进入老生代</p>
+<h4 id="老生代算法"><a href="#老生代算法" class="headerlink" title="老生代算法"></a>老生代算法</h4><p>老生代主要采用标记清除法，<br>首先将所有的非根部对象全部标记为白色，然后使用深度优先遍历，是深度优先哈，和新生代不一样哈，按深度优先搜索沿途遍历，将访问到的对象，直接压入栈中，同时将标记结果放在 marking bitmap (灰色) 中，一个对象遍历完成，直接出栈，同时在 marking bitmap 中记录为黑色，直到栈空为止，来张图，休息一下</p>
+<p>标记完成后，接下来就是等待垃圾回收器来清除了，清除完了之后，会在原来的内存区域留下一大堆不连续的空间，小对象还好说，这个时候如果来一个稍微大一点的对象，没有内存可以放的下这个傻大个了，怎么办？只能触发 GC，但是吧，原来清除的不连续的空间加起来又可以放的下这个傻大个，很可惜啊，启动一次 GC 性能上也是嗖嗖的往下掉啊；V8 能容许这样的事发生？肯定不存在嘛！</p>
+<p>所以在清除完之后，新生代中对象，再一次分配到老生带并且内存不足的时候，会优先触发标记整理（mark-compact）, 在标记结束后，他会将可达对象(黑色)，移到内存的另一端，其他的内存空间就不会被占用，直接释放，等下次再有对象晋升的时候，轻松放下。</p>
+<p>转载自：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6909239354418266119">https://juejin.cn/post/6909239354418266119</a></p>
+<h3 id="globalThis"><a href="#globalThis" class="headerlink" title="globalThis"></a>globalThis</h3><p>在ES2020中提出的在任何环境中获取全局对象的方法。<br>区分node和浏览器的全局对象global和window</p>
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h4><p>用于读取函数的参数，是一个数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params">a, b, c</span>) </span>&#123;<br>    c = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>);<br>    <span class="hljs-keyword">return</span> a + b + c;<br>&#125;<br><span class="hljs-built_in">console</span>.log(a(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>));<br>会输出：<br>[Arguments] &#123; <span class="hljs-string">&#x27;0&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;1&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;2&#x27;</span>: <span class="hljs-number">10</span> &#125; <br><span class="hljs-number">12</span><br></code></pre></td></tr></table></figure>
+<p>请注意！这里的arguments[2]的值是10而不是传入的参数1<br>我们把它改造一下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params">a, b, c = <span class="hljs-number">3</span></span>) </span>&#123;<br>    c = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>);<br>    <span class="hljs-keyword">return</span> a + b + c;<br>&#125;<br><span class="hljs-built_in">console</span>.log(a(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>));<br>会输出：<br>[Arguments] &#123; <span class="hljs-string">&#x27;0&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;1&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;2&#x27;</span>: <span class="hljs-number">1</span> &#125; <br><span class="hljs-number">12</span><br></code></pre></td></tr></table></figure>
+<p>这里，具有默认值的c，在arguments中表现为1<br>MDN文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments</a><br>在严格模式下，剩余参数、默认参数和解构赋值参数的存在不会改变 arguments对象的行为，但是在非严格模式下就有所不同了。<br>当非严格模式中的函数没有包含剩余参数、默认参数和解构赋值，那么arguments对象中的值会跟踪参数的值（反之亦然)</p>
+<h4 id="a-length"><a href="#a-length" class="headerlink" title="a.length"></a>a.length</h4><p>上面的函数a的length是什么意思？函数的长度？我们来试验一下</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">console</span><span class="hljs-string">.</span><span class="hljs-comment">log(a</span><span class="hljs-string">.</span><span class="hljs-comment">length);</span><br><span class="hljs-comment">对于第一个c有默认值的a，会输出：2</span><br><span class="hljs-comment">对于第二个c没有默认值的a，会输出：3</span><br></code></pre></td></tr></table></figure>
+<p>由此可知，a.length的意思是函数的没有默认值的参数的个数。</p>
+<hr>
+<hr>
+<p>之后再看到会继续补充</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/">知识回顾</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/06/06/%E5%9B%BE%E7%89%87/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">图片</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/13/Js%E5%9B%9E%E9%A1%BE%EF%BC%88%E5%9B%9B%EF%BC%89/">
+                        <span class="hidden-mobile">Js回顾（四）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

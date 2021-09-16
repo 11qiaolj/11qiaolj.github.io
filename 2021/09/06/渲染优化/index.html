@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>渲染优化 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="渲染优化">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-06 21:49" pubdate>
+        2021年9月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">渲染优化</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="从浏览器输入url到页面渲染都发生了什么？（下）"><a href="#从浏览器输入url到页面渲染都发生了什么？（下）" class="headerlink" title="从浏览器输入url到页面渲染都发生了什么？（下）"></a>从浏览器输入url到页面渲染都发生了什么？（下）</h1><p>上一篇说到，浏览器通过网络，拿到了我们加载页面所需要的资源。</p>
+<p>那么我们的浏览器该如何对这些资源进行操作呢？</p>
+<h2 id="对资源的解析"><a href="#对资源的解析" class="headerlink" title="对资源的解析"></a>对资源的解析</h2><h3 id="生成DOM树和渲染树"><a href="#生成DOM树和渲染树" class="headerlink" title="生成DOM树和渲染树"></a>生成DOM树和渲染树</h3><p>浏览器拿到我们的资源后，会将index.html解析成DOM树</p>
+<p>同时也会把CSS资源解析成渲染树。</p>
+<p>最后，将DOM树与渲染树合并，生成了布局树LayoutTree</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9e502f20954e4a69822d26a873e2c3b4~tplv-k3u1fbpfcp-watermark.image" srcset="/img/loading.gif" lazyload alt="图片来源于网络"></p>
+<p>获得了布局树的浏览器开始绘制页面，在绘制的过程中。会伴随两个重要的概念：重绘和重排（回流）</p>
+<h4 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h4><p>重绘指元素的样式发生改变，这是会回到渲染的第二步，重新生成渲染树。</p>
+<p>改变元素的颜色，字体等影响样式的操作会引发重绘。</p>
+<h4 id="重排"><a href="#重排" class="headerlink" title="重排"></a>重排</h4><p>重排是指，元素的树形结构发生改变。需要回到第一步。</p>
+<p>这时，整个渲染流程都将重新启动（reflow）。因此，重排对于浏览器的性能消耗非常大。</p>
+<p>元素的大小，生成新的元素，文字的改变，都会引起重排。</p>
+<p>重排必定引起重绘，但重绘未必会引起重排！</p>
+<h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><p>重排对于性能的影响是非常大的，减少重排的次数是我们进行性能优化的主要方式</p>
+<p>那么，如何在页面美观又不影响性能的方式下调整页面呢？</p>
+<h5 id="原生JS"><a href="#原生JS" class="headerlink" title="原生JS"></a>原生JS</h5><p>通常通过原生js获取DOM，我们最好对获取到的DOM元素用一个变量缓存起来。避免多次查询DOM</p>
+<p>原生JS中，有一个API，是createDocumentFragment()。通过这个API创造一个文档片段，通过把多数的DOM元素插入到这个文档片段中。再将其插入到DOM中，形成多次操作，一次插入的目的。优化性能。</p>
+<h5 id="vDom"><a href="#vDom" class="headerlink" title="vDom"></a>vDom</h5><p>虚拟DOM是现在主流框架的一个必不可少的机制。</p>
+<p>vDom原理就是用js来模拟DOM树，我们对js进行操作的性能远比对浏览器操作要好的多。</p>
+<p>因此，将大量操作合并为对js的操作，再将两棵vDOM树作对比，将不同部分更新，这样就对性能有了很大的提升。</p>
+<h5 id="vDOM优化"><a href="#vDOM优化" class="headerlink" title="vDOM优化"></a>vDOM优化</h5><p>虚拟DOM虽然优秀，但依旧存在问题。那就是两个DOM树的对比就是两棵树的对比，时间复杂度是n的二次方。</p>
+<p>这样的复杂度没法投入生产，那么我们需要对这个对比操作进行优化。</p>
+<p>充满智慧的前端工程师们想到了办法：<br>我们遍历每一个节点，通过key和tag对节点进行对比</p>
+<ul>
+<li>如果不同，那么直接替换掉这个节点，不再向下对比</li>
+<li>如果相同，那么继续向下对比。</li>
+</ul>
+<h5 id="节流和防抖"><a href="#节流和防抖" class="headerlink" title="节流和防抖"></a>节流和防抖</h5><ul>
+<li><p>节流就是指用户对一个元素进行操作（如拖拽），如果一直触发，会造成浏览器卡顿。我们可以通过设置定时器，让在该段时间内的操作全部不响应，直到定时器结束，再开始响应。这样可能会把一秒几百次操作优化为一秒一次。</p>
+</li>
+<li><p>防抖是指，用户对一个元素进行操作（如表单输入响应），我们需要在用户每次输入的时候开启一个网络请求。<br>这显然是不现实的，因此可以对用户的操作进行防抖操作，即用户输入，取消上一次的事件，再次设定回调事件。<br>这样，用户输入结束后的一段时间，才会进行网络请求，验证表单。</p>
+</li>
+<li><p>节流和防抖结合<br>防抖存在一个问题，那就是，如果用户连续不断的输入，那么操作永远不会触发。<br>这时候，采用与节流结合的办法，在规定时间内触发一次，提高用户体验。</p>
+</li>
+</ul>
+<h5 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h5><p>会在渲染进程的每一帧的最后一段空余时间被调用，防止动画的卡顿。</p>
+<h5 id="CSS优化"><a href="#CSS优化" class="headerlink" title="CSS优化"></a>CSS优化</h5><p>之前的都是js层面的优化，在css中，也是可以优化的。</p>
+<p>css3提供的几个属性，可以使GPU加速，优化渲染。<br>启用GPU加速 <code>GPU</code> 硬件加速是指应用 <code>GPU</code> 的图形性能对浏览器中的一些图形操作交给 <code>GPU</code> 来完成。</p>
+<p>以下几个属性可以触发GPU加速</p>
+<ul>
+<li> transform</li>
+<li> opacity</li>
+<li> filter</li>
+<li> will-change</li>
+</ul>
+<p>在操作元素的过程中，display：none 的元素不会引起重排。</p>
+<h3 id="js解析"><a href="#js解析" class="headerlink" title="js解析"></a>js解析</h3><p>js的解析与渲染引擎共用一个线程，比较重点的是事件循环机制。</p>
+<p>可以参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6999195833094635527">https://juejin.cn/post/6999195833094635527</a></p>
+<h2 id="浏览器的内核："><a href="#浏览器的内核：" class="headerlink" title="浏览器的内核："></a>浏览器的内核：</h2><pre><code class=" mermaid">graph TD
+用户界面 --&gt; 浏览器引擎 --&gt; 渲染引擎
+</code></pre>
+
+<p> 图片和css的解析不会影响页面加载。</p>
+<h2 id="上一篇的补充"><a href="#上一篇的补充" class="headerlink" title="上一篇的补充"></a>上一篇的补充</h2><h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><h4 id="浏览器的同源政策"><a href="#浏览器的同源政策" class="headerlink" title="浏览器的同源政策"></a>浏览器的同源政策</h4><p> 在同一协议，同一域名，同一端口下的页面是同源的。</p>
+<p> 三者必须一致，否则需要跨域</p>
+<p> 是为了防止信息被窃取。</p>
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><p> 通过<code>&lt;img&gt; &lt;link&gt; &lt;script&gt;</code>标签，绕过同源策略，获取数据。</p>
+<h4 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h4><p> 服务器端设置http-headers，允许我们的地址访问</p>
+<h3 id="浏览器存储"><a href="#浏览器存储" class="headerlink" title="浏览器存储"></a>浏览器存储</h3><h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p> cookie被设计出来不是为了存储，而是为了传递信息。<br> 大小为4k左右，且不安全。</p>
+<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><p> 大小为每个域名下5M，不会删除，除非用户手动删除</p>
+<h3 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h3><p> 大小为每个域名下5M，在当前会话中存在</p>
+<p> sessionStorage和loaclStorage都可以通过API来设置和获取<br> setItem（），getItem（）<br> 也可以直接Window.loaclStorage.来设置或获取</p>
+<h3 id="IndexDB"><a href="#IndexDB" class="headerlink" title="IndexDB"></a>IndexDB</h3><p> IndexedDB 内部采用对象仓库（object store）存放数据。所有类型的数据都可以直接存入，包括 JavaScript 对象</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/">知识回顾</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/15/react%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">My Starting Point</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/06/%E7%BD%91%E7%BB%9C%E6%95%B4%E7%90%86/">
+                        <span class="hidden-mobile">网络整理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

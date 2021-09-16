@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>算法与数据结构day1 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="算法与数据结构day1">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-04 18:24" pubdate>
+        2021年4月4日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      836 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">算法与数据结构day1</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：8 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="day1-栈stack"><a href="#day1-栈stack" class="headerlink" title="day1 栈stack"></a>day1 栈stack</h2><p>今天学了时间复杂度和空间复杂度，都是以前上课学过的内容</p>
+<p>栈：是一种后进先出的数据结构，在javascript中可以用引用数据类型array来模拟，有pop推出和push推入两个常用方法。</p>
+<h3 id="用ES6实现栈"><a href="#用ES6实现栈" class="headerlink" title="用ES6实现栈"></a>用ES6实现栈</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span> </span>&#123;<br>    <span class="hljs-keyword">constructor</span>() &#123;<br>        <span class="hljs-keyword">this</span>.stack = [];<br>    &#125;<br>    pop() &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stack.pop();<br>    &#125;<br>    push(...arg) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stack.push(arg);<br>    &#125;<br>    peek() &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stack[<span class="hljs-keyword">this</span>.stack.length - <span class="hljs-number">1</span>];<br>    &#125;<br>    length() &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stack.length;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="用栈实现100的转二进制"><a href="#用栈实现100的转二进制" class="headerlink" title="用栈实现100的转二进制"></a>用栈实现100的转二进制</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">let</span> <span class="hljs-built_in">num</span> = <span class="hljs-number">100</span>;<br><br>const toBinary = function (<span class="hljs-built_in">num</span>) &#123;<br>    const stack = [];<br>    <span class="hljs-built_in">let</span> Binary = <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">num</span> &gt; <span class="hljs-number">0</span>) &#123;<br>        stack.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">num</span> <span class="hljs-symbol">%</span> <span class="hljs-number">2</span>);<br>        <span class="hljs-built_in">num</span> = Math.<span class="hljs-built_in">floor</span>(<span class="hljs-built_in">num</span> / <span class="hljs-number">2</span>);<br>    &#125;<br>    <span class="hljs-keyword">while</span> (stack.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>        Binary += stack.<span class="hljs-built_in">pop</span>();<br>    &#125;<br>    console.<span class="hljs-built_in">log</span>(Binary);<br>&#125;<br>toBinary(<span class="hljs-built_in">num</span>);<br></code></pre></td></tr></table></figure>
+<p>输出1100100</p>
+<p>昨天晚上做了一道题，动态规划看不懂。换了一道，还是动态规划，看不懂，今天决定系统的学一下算法。<br>今天刚刚学到栈，之后会继续学，做了一道括号合并的题，记录一下。</p>
+<h3 id="有效括号-题号-20"><a href="#有效括号-题号-20" class="headerlink" title="有效括号 题号:20"></a>有效括号 题号:20</h3><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。<br>左括号必须以正确的顺序闭合。
+ </p>
+<p>示例 1：</p>
+<p>输入：s = “()”<br>输出：true<br>示例 2：</p>
+<p>输入：s = “()[]{}”<br>输出：true<br>示例 3：</p>
+<p>输入：s = “(]”<br>输出：false<br>示例 4：</p>
+<p>输入：s = “([)]”<br>输出：false<br>示例 5：</p>
+<p>输入：s = “{[]}”<br>输出：true
+ </p>
+<p>提示：</p>
+<p>1 &lt;= s.length &lt;= 104<br>s 仅由括号 ‘()[]{}’ 组成</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses">https://leetcode-cn.com/problems/valid-parentheses</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs arduino">var isValid = <span class="hljs-built_in">function</span> (s) &#123;<br>    <span class="hljs-keyword">if</span> (s.length % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;   <span class="hljs-comment">//如果是奇数，那么可以直接判定失败</span><br>    &#125;<br>    <span class="hljs-keyword">const</span> stack = [];<span class="hljs-comment">//定义一个空栈</span><br>    <span class="hljs-keyword">for</span> (let i = <span class="hljs-number">0</span>; i &lt; s.length; i++) &#123;<span class="hljs-comment">//遍历字符串</span><br>        <span class="hljs-keyword">const</span> c = s[i];<br>        <span class="hljs-keyword">if</span> (c === <span class="hljs-string">&#x27;(&#x27;</span> || c === <span class="hljs-string">&#x27;[&#x27;</span> || c === <span class="hljs-string">&#x27;&#123;&#x27;</span>) &#123;  <span class="hljs-comment">//当元素为左半边，直接压入栈中</span><br>            stack.<span class="hljs-built_in">push</span>(c);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">const</span> t = stack[stack.length - <span class="hljs-number">1</span>];<span class="hljs-comment">//如果元素是右半边，那么与栈顶元素比较</span><br>            <span class="hljs-built_in"><span class="hljs-keyword">switch</span></span> (c) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;)&#x27;</span>:       <span class="hljs-comment">//若可以合并，则推出栈顶元素</span><br>                    <span class="hljs-keyword">if</span> (t === <span class="hljs-string">&#x27;(&#x27;</span>) &#123;<br>                        stack.<span class="hljs-built_in">pop</span>();<br>                    &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> &#125;<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;&#125;&#x27;</span>:<br>                    <span class="hljs-keyword">if</span> (t === <span class="hljs-string">&#x27;&#123;&#x27;</span>) stack.<span class="hljs-built_in">pop</span>();<br>                    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;]&#x27;</span>:<br>                    <span class="hljs-keyword">if</span> (t === <span class="hljs-string">&#x27;[&#x27;</span>) stack.<span class="hljs-built_in">pop</span>();<br>                    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>            &#125;<br><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> stack.length === <span class="hljs-number">0</span>;<span class="hljs-comment">//当执行结束，如果栈是空，则代表所有括号合并，返回true</span><br><br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>思路：<br>定义一个空栈，判断若为括号左边则压入栈内，若为右边则判断是否与栈顶元素闭合，闭合则弹出栈顶元素，不闭合则直接错误。<br>当所有元素判断完，如果栈空，则所有括号都闭合，成功。</p>
+<h3 id="千位分割数-题号：1556"><a href="#千位分割数-题号：1556" class="headerlink" title="千位分割数 题号：1556"></a>千位分割数 题号：1556</h3><p>给你一个整数 n，请你每隔三位添加点（即 “.” 符号）作为千位分隔符，并将结果以字符串格式返回。</p>
+<p> </p>
+<p>示例 1：</p>
+<p>输入：n = 987<br>输出：”987”<br>示例 2：</p>
+<p>输入：n = 1234<br>输出：”1.234”<br>示例 3：</p>
+<p>输入：n = 123456789<br>输出：”123.456.789”<br>示例 4：</p>
+<p>输入：n = 0<br>输出：”0”</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/thousand-separator">https://leetcode-cn.com/problems/thousand-separator</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function">function <span class="hljs-title">thousandSeparator</span>(<span class="hljs-params">n: number</span>): <span class="hljs-built_in">string</span></span> &#123;<br>    <span class="hljs-keyword">const</span> res=[]<br>    <span class="hljs-keyword">let</span> numSAtr=n+<span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">let</span> startSub=numSAtr.length<br>    <span class="hljs-keyword">while</span>(startSub&gt;<span class="hljs-number">2</span>)&#123;<br>       res.unshift(numSAtr.substr(startSub<span class="hljs-number">-3</span>,<span class="hljs-number">3</span>))<br>       startSub-=<span class="hljs-number">3</span><br>    &#125;<br>    startSub!==<span class="hljs-number">0</span>&amp;&amp;res.unshift(numSAtr.substr(<span class="hljs-number">0</span>,startSub))<br>    <br>    <span class="hljs-keyword">return</span> res.<span class="hljs-keyword">join</span>(<span class="hljs-string">&#x27;.&#x27;</span>)<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>解题思路：利用栈，截取后面三位，再以.拼起来</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/04/HTML%E5%9B%9E%E9%A1%BE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTML回顾总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/01/LeetCode%EF%BC%88%E4%B8%80%EF%BC%89/">
+                        <span class="hidden-mobile">LeetCode（一）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>Js回顾（一） - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Js回顾（一）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-25 11:08" pubdate>
+        2021年4月25日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Js回顾（一）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Js回顾（一）"><a href="#Js回顾（一）" class="headerlink" title="Js回顾（一）"></a>Js回顾（一）</h1><p>JavaScript中的Es基础部分</p>
+<h1 id="基本数据类型与引用数据类型"><a href="#基本数据类型与引用数据类型" class="headerlink" title="基本数据类型与引用数据类型"></a>基本数据类型与引用数据类型</h1><p>基本数据类型有7个：number，string，boolean，undefined，null，symbol，bigInt<br>这里注意，基本数据类型都是开头小写的，开头大写的（如Number，String）是他们的构造函数</p>
+<p>引用数据类型：Object和function（function一般不用于存储数据，可以执行）<br>Array，Boolean,Number,String,Error,Set,WeakSet,Map,WeakMap,RegExp,Math,Data等都是基于Object的数据模型</p>
+<h3 id="typeof与instanceof"><a href="#typeof与instanceof" class="headerlink" title="typeof与instanceof"></a>typeof与instanceof</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>typeof用于判断基本数据类型，可以正确返回其数据类型。判断引用数据类型则都为object<br>（null较为特殊，也会判断为object，其原因是在js中，引用类型在二进制中都是000开头的，null则都是0，因此会被误认为object，这也是js的设计缺陷之一)</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-number">42</span>);<br><span class="hljs-regexp">//</span> expected output: <span class="hljs-string">&quot;number&quot;</span><br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-string">&#x27;blubber&#x27;</span>);<br><span class="hljs-regexp">//</span> expected output: <span class="hljs-string">&quot;string&quot;</span><br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>);<br><span class="hljs-regexp">//</span> expected output: <span class="hljs-string">&quot;boolean&quot;</span><br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> undeclaredVariable);<br><span class="hljs-regexp">//</span> expected output: <span class="hljs-string">&quot;undefined&quot;</span><br></code></pre></td></tr></table></figure>
+<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>instanceof用于判断引用数据类型，其原理是基于其原型链查找。<br>手写一个仿instanceof可以更清晰的理解其工作原理：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> c = []<br><span class="hljs-built_in">console</span>.log(c <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>)<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">instance_of</span>(<span class="hljs-params">L, R</span>) </span>&#123;    <span class="hljs-comment">//传入参数L为要判断的变量，R为要判断的类型</span><br>    <span class="hljs-keyword">const</span> baseType = [<span class="hljs-string">&#x27;string&#x27;</span>, <span class="hljs-string">&#x27;number&#x27;</span>, <span class="hljs-string">&#x27;bollean&#x27;</span>, <span class="hljs-string">&#x27;undefined&#x27;</span>, <span class="hljs-string">&#x27;symbol&#x27;</span>, <span class="hljs-string">&#x27;bigint&#x27;</span>]<span class="hljs-comment">//定义基本数据类型</span><br>    <span class="hljs-keyword">if</span> (baseType.includes(<span class="hljs-keyword">typeof</span> (L) || L === <span class="hljs-literal">null</span>)) &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> &#125;<span class="hljs-comment">//如果要判断的L是基本数据类型，返回false</span><br>    <span class="hljs-keyword">let</span> Lp = L.__proto__    <span class="hljs-comment">//L沿原型链向上查找</span><br>    <span class="hljs-keyword">let</span> Rp = R.prototype    <span class="hljs-comment">//R沿原型链向上查找</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">if</span> (Lp === <span class="hljs-literal">null</span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> &#125;   <span class="hljs-comment">//当L找到了头为null还是无法匹配，返回false</span><br>        <span class="hljs-keyword">if</span> (Lp === Rp) &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> &#125;      <span class="hljs-comment">//L与R匹配成功，返回true</span><br>        Lp = Lp.__proto__                   <span class="hljs-comment">//在循环中不断向上查找原型链</span><br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(instance_of(c, <span class="hljs-built_in">Array</span>))<br></code></pre></td></tr></table></figure>
+<h4 id="其余判断类型的方式"><a href="#其余判断类型的方式" class="headerlink" title="其余判断类型的方式"></a>其余判断类型的方式</h4><p>1.Object.prototype.toString.call()是判断类型的最佳解决方案<br>该函数会返回一个[object xxx]的数据，xxx即为数据类型<br>例如：<br><code>let c=[]</code><br><code>console.log(Object.prototype.toString.call(c));//返回[object Array]</code></p>
+<p>2.Symbol.hasInstance<br>是一种ES6提出的方式，在Symbol内定义</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Array1</span> </span>&#123;<br>  <span class="hljs-keyword">static</span> [<span class="hljs-built_in">Symbol</span>.hasInstance](instance) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.isArray(instance);<br>  &#125;<br>&#125;<br><br><span class="hljs-built_in">console</span>.log([] <span class="hljs-keyword">instanceof</span> Array1);  <span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="储存位置"><a href="#储存位置" class="headerlink" title="储存位置"></a>储存位置</h3><p>原始数据类型存储在栈中，一个变量对应一个值，不可改变（不论调用何种方法，都不可改变）</p>
+<p>引用数据类型的变量存放在栈中，这个变量会对应一个堆内存内的地址。</p>
+<p>然而这种说法虽然广泛，但却并不准确，或者说真实情况并不完全是这样。<br>一种理解是：局部变量是存储在栈上的，全局静态变量是存放在静态区域上，其他都存在堆上。（基于Chrome浏览器内核）</p>
+<h3 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h3><p>之前说的引用数据类型是存储在栈中然后指向堆中的一个地址，这就带来一个问题：<br>假设我们有两个对象a和b，当a=b时，就会使a和b同时指向这个堆地址。那么当我们改变a中的对象的属性时，b的对象的属性也随之改变了。</p>
+<p>这时，就需要浅拷贝与深拷贝来帮助我们复制对象</p>
+<h4 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h4><p>浅拷贝可以拷贝对象的基本类型，但遇到引用类型时，还是会拷贝引用类型到地址，造成影响</p>
+<p>注意：这里到浅拷贝不同于直接赋值，直接赋值改变基本类型时，也会造成影响</p>
+<p>浅拷贝的实现方式：<br>1.Object.assign()<br>2.函数库lodash的_.clone方法<br>3.拓展运算符…<br>4.Array.prototype.concat()<br>5.Array.prototype.slice()<br>等等</p>
+<p>浅拷贝已经能解决大部分的拷贝数据问题，但遇到特殊情况还是需要深拷贝。</p>
+<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>深拷贝拷贝对象内的所有数据，且不是引用形式。<br>深拷贝的实现方式：<br>1.JSON.parse(JSON.stringify(obj))<br>利用JSON的方法将对象转化为JSON字符串，再转换为对象。<br>但这种方法存在一些问题：<br>该方法虽然可以实现数组或对象深拷贝,但不能处理null，函数和正则，因为在被JSON.stringify和JSON.parse处理后，null会消失，得到的正则不再是正则（变为空对象），得到的函数也不再是函数（变为null）了。<br>同时，如果对象内部存在循环引用，该方法也无法处理</p>
+<p>2.函数库lodash的_.cloneDeep方法</p>
+<p>3.手写递归深拷贝：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">function</span> deep<span class="hljs-constructor">Clone(<span class="hljs-params">obj</span> = &#123;&#125;)</span> &#123;<br>    <span class="hljs-keyword">if</span> (typeof obj !== &#x27;<span class="hljs-keyword">object</span>&#x27;<span class="hljs-operator"> || </span>obj<span class="hljs-operator"> == </span>null) &#123;<br>        return obj  <span class="hljs-comment">//不是引用类型，直接返回即可</span><br>    &#125;<br>    <span class="hljs-keyword">let</span> res = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Array</span>.</span></span>is<span class="hljs-constructor">Array(<span class="hljs-params">obj</span>)</span> ? <span class="hljs-literal">[]</span> : &#123;&#125;   <span class="hljs-comment">//是数组则创建空数组，是对象则传教空对象</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> obj) &#123;<br>        <span class="hljs-keyword">if</span> (obj.has<span class="hljs-constructor">OwnProperty(<span class="hljs-params">key</span>)</span>) &#123;      <span class="hljs-comment">//判断是不是自身的属性</span><br>            res<span class="hljs-literal">[<span class="hljs-identifier">key</span>]</span> = deep<span class="hljs-constructor">Clone(<span class="hljs-params">obj</span>[<span class="hljs-params">key</span>])</span>  <span class="hljs-comment">//递归调用，拷贝深层的数据</span><br>        &#125;<br>    &#125;<br>    return res<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="变量之间的转换，运算与比较"><a href="#变量之间的转换，运算与比较" class="headerlink" title="变量之间的转换，运算与比较"></a>变量之间的转换，运算与比较</h3><h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>js中类型转换存在3种情况：<br>转换为布尔值<br>转换为数字<br>转换为字符串</p>
+<h4 id="转Boolean"><a href="#转Boolean" class="headerlink" title="转Boolean"></a>转Boolean</h4><p>在条件判断时，除了 undefined， null， false， NaN， ‘’， 0， -0，其他所有值都转为 true，包括所有对象。</p>
+<h4 id="对象转原始类型"><a href="#对象转原始类型" class="headerlink" title="对象转原始类型"></a>对象转原始类型</h4><p>对象在转换类型的时候，会调用内置的 <code>[[ToPrimitive]]</code> 函数，对于该函数来说，算法逻辑一般来说如下：</p>
+<p>如果已经是原始类型了，那就不需要转换了<br>如果需要转字符串类型就调用 x.toString()，转换为基础类型的话就返回转换的值。不是字符串类型的话就先调用 valueOf，结果不是基础类型的话再调用 toString<br>调用 x.valueOf()，如果转换为基础类型，就返回转换的值<br>如果都没有返回原始类型，就会报错</p>
+<p>当然你也可以重写 Symbol.toPrimitive ，该方法在转原始类型时调用优先级最高。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> a = &#123;<br>  <span class="hljs-function"><span class="hljs-title">valueOf</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>  &#125;,<br>  <span class="hljs-function"><span class="hljs-title">toString</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;1&#x27;</span><br>  &#125;,<br>  [<span class="hljs-built_in">Symbol</span>.toPrimitive]() &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span><br>  &#125;<br>&#125;<br><span class="hljs-number">1</span> + a <span class="hljs-comment">// =&gt; 3</span><br></code></pre></td></tr></table></figure>
+<h4 id="变量计算"><a href="#变量计算" class="headerlink" title="变量计算"></a>变量计算</h4><p>加法运算符不同于其他几个运算符，它有以下几个特点：</p>
+<p>运算中其中一方为字符串，那么就会把另一方也转换为字符串<br>如果一方不是字符串或者数字，那么会将它转换为数字或者字符串</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-number">1</span> + <span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-regexp">//</span> <span class="hljs-string">&#x27;11&#x27;</span><br>true + true <span class="hljs-regexp">//</span> <span class="hljs-number">2</span><br><span class="hljs-number">4</span> + [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] <span class="hljs-regexp">//</span> <span class="hljs-string">&quot;41,2,3&quot;</span><br></code></pre></td></tr></table></figure>
+<p>一个有趣的加法：<br><code>&#39;b&#39;+&#39;a&#39;++&#39;a&#39;+&#39;a&#39;.toLowerCase()</code> 会得到‘banana’</p>
+<h4 id="变量比较-‘-’vs’-’"><a href="#变量比较-‘-’vs’-’" class="headerlink" title="变量比较 ‘==’vs’===’"></a>变量比较 ‘==’vs’===’</h4><p>两等会进行隐式转换，简单来说是：<br>对象-&gt;字符串-&gt;数字&lt;-布尔<br>在这个过程中，出现类型相同，则会比较，不同则转换类型，直到相同。</p>
+<p>只需要记住，在判断null时用==<br>其余情况全部用===就可以了</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4a2627fe55f1?imageView2/0/w/1280/h/960/ignore-error/1" srcset="/img/loading.gif" lazyload alt="借用网上找的一张图片说明"></p>
+<h4 id="if中的truly和falsely"><a href="#if中的truly和falsely" class="headerlink" title="if中的truly和falsely"></a>if中的truly和falsely</h4><p>两步取反：！！进行判断</p>
+<h3 id="关于Symbol"><a href="#关于Symbol" class="headerlink" title="关于Symbol"></a>关于Symbol</h3><p>symbol不会覆盖原来的同名属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> father=&#123;<br>  son:[son1 ,son2, son3],<br>  daughter:[dau1,dau2]<br>&#125;<br><span class="hljs-keyword">const</span> son=<span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&#x27;otherson&#x27;</span>)    <span class="hljs-comment">//注意：Symbol不能使用new关键字</span><br>father[son]=<span class="hljs-string">&#x27;otherson&#x27;</span>     <span class="hljs-comment">//这样也不会覆盖原来的属性</span><br></code></pre></td></tr></table></figure>
+
+<p>对象的symbol属性不能通过正常途径查询<br>log，key，for..in都不能显示obj中的symbol内容</p>
+<p>需要查询symbol时，要用到Object.getOwnPropertySymbols(father)</p>
+<p>用Symbol.for来创建共享的Symbol</p>
+<h3 id="关于正则RegExp"><a href="#关于正则RegExp" class="headerlink" title="关于正则RegExp"></a>关于正则RegExp</h3><p>1.正则表达式都在两个‘/’中间<br>2.元字符：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livescript">^ 检验开头    $ 检验结尾    <span class="hljs-string">\b</span> 单词开始<br>. 任意字符    <span class="hljs-string">\w</span> 字母，数组，下划线或汉字<br><span class="hljs-string">\s</span> 空白  <span class="hljs-string">\d</span> 数字   <span class="hljs-string">\n</span> 换行   <span class="hljs-string">\s非空白</span><br></code></pre></td></tr></table></figure>
+<p>3.重复:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs excel">* <span class="hljs-number">0</span>或多次  + <span class="hljs-number">1</span>或多次  ? <span class="hljs-number">0</span>或<span class="hljs-number">1</span>次<br>&#123;<span class="hljs-built_in">n</span>&#125; <span class="hljs-built_in">n</span>次   &#123;<span class="hljs-built_in">n</span>,&#125;  <span class="hljs-built_in">n</span>或<span class="hljs-built_in">n</span>次以上    &#123;<span class="hljs-built_in">n</span>,m&#125; <span class="hljs-built_in">n</span>到m次<br></code></pre></td></tr></table></figure>
+<p>4.分组：()<br>5.转译： <br>6.或：  ｜<br>7.区间：[]  如0到9:<code>[0-9]</code></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/">知识回顾</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/05/01/Js%E5%9B%9E%E9%A1%BE%EF%BC%88%E4%BA%8C%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Js回顾（二）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/21/CSS%E5%9B%9E%E9%A1%BE%EF%BC%88%E4%B8%89%EF%BC%89/">
+                        <span class="hidden-mobile">CSS回顾（三）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

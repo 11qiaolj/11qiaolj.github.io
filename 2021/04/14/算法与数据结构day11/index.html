@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>算法与数据结构day11 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="算法与数据结构day11">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-14 15:09" pubdate>
+        2021年4月14日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      553 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">算法与数据结构day11</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：5 个月前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="day11-分而治之"><a href="#day11-分而治之" class="headerlink" title="day11 分而治之"></a>day11 分而治之</h2><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>分而治之是一种算法设计思想，之前学过的归并排序，快速排序都用到了这种思想。<br>分-&gt;解-&gt;合</p>
+<h3 id="翻转二叉树-题号：226"><a href="#翻转二叉树-题号：226" class="headerlink" title="翻转二叉树 题号：226"></a>翻转二叉树 题号：226</h3><p>翻转一棵二叉树。</p>
+<p>示例：</p>
+<p>输入：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livescript">     <span class="hljs-number">4</span><br>   /   <span class="hljs-string">\</span><br>  <span class="hljs-number">2</span>     <span class="hljs-number">7</span><br> / <span class="hljs-string">\</span>   / <span class="hljs-string">\</span><br><span class="hljs-number">1</span>   <span class="hljs-number">3</span> <span class="hljs-number">6</span>   <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livescript">     <span class="hljs-number">4</span><br>   /   <span class="hljs-string">\</span><br>  <span class="hljs-number">7</span>     <span class="hljs-number">2</span><br> / <span class="hljs-string">\</span>   / <span class="hljs-string">\</span><br><span class="hljs-number">9</span>   <span class="hljs-number">6</span> <span class="hljs-number">3</span>   <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<p>备注:<br>这个问题是受到 Max Howell 的 原问题 启发的 ：</p>
+<p>谷歌：我们90％的工程师使用您编写的软件(Homebrew)，但是您却无法在面试时在白板上写出翻转二叉树这道题，这太糟糕了。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree">https://leetcode-cn.com/problems/invert-binary-tree</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">var invertTree = <span class="hljs-keyword">function</span>(root) &#123;<br>    <span class="hljs-keyword">if</span>(!root)return null;<br><br>    return &#123;<br>        <span class="hljs-keyword">val</span>:root.<span class="hljs-keyword">val</span>,<br>        left:invert<span class="hljs-constructor">Tree(<span class="hljs-params">root</span>.<span class="hljs-params">right</span>)</span>,<br>        right:invert<span class="hljs-constructor">Tree(<span class="hljs-params">root</span>.<span class="hljs-params">left</span>)</span><br>    &#125;<br><br><br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="相同的树-题号：100"><a href="#相同的树-题号：100" class="headerlink" title="相同的树 题号：100"></a>相同的树 题号：100</h3><p>给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。</p>
+<p>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</p>
+<p> </p>
+<p>示例 1：</p>
+<p>输入：p = [1,2,3], q = [1,2,3]<br>输出：true<br>示例 2：</p>
+<p>输入：p = [1,2], q = [1,null,2]<br>输出：false<br>示例 3：</p>
+<p>输入：p = [1,2,1], q = [1,1,2]<br>输出：false
+ </p>
+<p>提示：</p>
+<p>两棵树上的节点数目都在范围 [0, 100] 内<br>-104 &lt;= Node.val &lt;= 104</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree">https://leetcode-cn.com/problems/same-tree</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">var isSameTree = <span class="hljs-keyword">function</span>(p, q) &#123;<br>    <span class="hljs-keyword">if</span>(!q&amp;&amp;!p)return <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">if</span>(p&amp;&amp;q&amp;&amp;p.<span class="hljs-keyword">val</span>===q.<span class="hljs-keyword">val</span>&amp;&amp;<br>        is<span class="hljs-constructor">SameTree(<span class="hljs-params">p</span>.<span class="hljs-params">left</span>,<span class="hljs-params">q</span>.<span class="hljs-params">left</span>)</span>&amp;&amp;<br>        is<span class="hljs-constructor">SameTree(<span class="hljs-params">p</span>.<span class="hljs-params">right</span>,<span class="hljs-params">q</span>.<span class="hljs-params">right</span>)</span><br>        )&#123;<br>            return <span class="hljs-literal">true</span>;<br>        &#125;<br>    return <span class="hljs-literal">false</span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="对称二叉树-题号：101"><a href="#对称二叉树-题号：101" class="headerlink" title="对称二叉树 题号：101"></a>对称二叉树 题号：101</h3><p>给定一个二叉树，检查它是否是镜像对称的。</p>
+<p> </p>
+<p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livescript">    <span class="hljs-number">1</span><br>   / <span class="hljs-string">\</span><br>  <span class="hljs-number">2</span>   <span class="hljs-number">2</span><br> / <span class="hljs-string">\</span> / <span class="hljs-string">\</span><br><span class="hljs-number">3</span>  <span class="hljs-number">4</span> <span class="hljs-number">4</span>  <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livescript">  <span class="hljs-number">1</span><br> / <span class="hljs-string">\</span><br><span class="hljs-number">2</span>   <span class="hljs-number">2</span><br> <span class="hljs-string">\</span>   <span class="hljs-string">\</span><br> <span class="hljs-number">3</span>    <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree">https://leetcode-cn.com/problems/symmetric-tree</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">var isSymmetric = <span class="hljs-keyword">function</span>(root) &#123;<br>    <span class="hljs-keyword">if</span>(!root)return <span class="hljs-literal">true</span>;<br>    var isMirror = <span class="hljs-keyword">function</span>(l, r) &#123;<br>        <span class="hljs-keyword">if</span>(!l&amp;&amp;!r)return <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">if</span>(l&amp;&amp;r&amp;&amp;l.<span class="hljs-keyword">val</span>===r.<span class="hljs-keyword">val</span>&amp;&amp;<br>            is<span class="hljs-constructor">Mirror(<span class="hljs-params">l</span>.<span class="hljs-params">left</span>,<span class="hljs-params">r</span>.<span class="hljs-params">right</span>)</span>&amp;&amp;<br>            is<span class="hljs-constructor">Mirror(<span class="hljs-params">l</span>.<span class="hljs-params">right</span>,<span class="hljs-params">r</span>.<span class="hljs-params">left</span>)</span><br>        )&#123;<br>            return <span class="hljs-literal">true</span>;<br>        &#125;<br>        return <span class="hljs-literal">false</span>;<br>    &#125;;<br>    return is<span class="hljs-constructor">Mirror(<span class="hljs-params">root</span>.<span class="hljs-params">left</span>,<span class="hljs-params">root</span>.<span class="hljs-params">right</span>)</span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/14/CSS%E5%9B%9E%E9%A1%BE%EF%BC%88%E4%BA%8C%EF%BC%89/%E7%A1%AC%E5%B8%81%E6%97%8B%E8%BD%AC/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CSS回顾（二）旋转的硬币</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/13/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day10/">
+                        <span class="hidden-mobile">算法与数据结构day10</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

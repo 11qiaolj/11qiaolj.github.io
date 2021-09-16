@@ -1,0 +1,75 @@
+---
+title: CSS回顾（三）圣杯布局
+date: 2021-04-21 11:39:14
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .ff {
+        float: left;
+        height: 200px;
+    }
+
+    .head,
+    .foot {
+        height: 100px;
+        background-color: #333;
+        width: 100%;
+        /* clear: both; */
+    }
+
+    .main {
+        background-color: #ccc;
+        padding: 0 230px 0 200px;
+    }
+
+    .mid {
+        width: 100%;
+    }
+
+    .left {
+        width: 200px;
+        background-color: yellow;
+        margin-left: -100%;
+        position: relative;
+        right: 200px;
+    }
+
+    .right {
+        width: 230px;
+        background-color: skyblue;
+        margin-right: -230px;
+    }
+
+    .clearfix:after {
+        content: '';
+        display: block;
+        overflow: hidden;
+        height: 0;
+        clear: both;
+    }
+</style>
+
+<body>
+    <div class="head">头部</div>
+    <div class="main clearfix">
+        <div class="mid ff">中</div>
+        <div class="left ff">左</div>
+        <div class="right ff">右</div>
+    </div>
+    <div class="foot ">脚部</div>
+</body>
+
+</html>

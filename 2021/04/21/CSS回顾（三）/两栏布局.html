@@ -1,0 +1,50 @@
+---
+title: CSS回顾（三）两栏布局
+date: 2021-04-21 11:39:14
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两栏布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            overflow: hidden;
+            border: 1px solid red;
+        }
+
+        /* 脱离文档流 */
+        .left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+
+        .right {
+            margin-left: 200px;
+            background: skyblue;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left">
+            左侧固定内容
+        </div>
+        <div class="right">
+            右侧内容自适应
+        </div>
+    </div>
+</body>
+
+</html>

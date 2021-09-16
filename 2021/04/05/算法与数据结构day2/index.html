@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>算法与数据结构day2 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="算法与数据结构day2">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-05 20:58" pubdate>
+        2021年4月5日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">算法与数据结构day2</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：8 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="day2-队列queue"><a href="#day2-队列queue" class="headerlink" title="day2 队列queue"></a>day2 队列queue</h2><p>队列：是一种先进先出的数据结构，在javascript中可以用引用数据类型array来模拟，有shift推出和push推入两个常用方法。</p>
+<h3 id="js中的异步任务队列和事件循环"><a href="#js中的异步任务队列和事件循环" class="headerlink" title="js中的异步任务队列和事件循环"></a>js中的异步任务队列和事件循环</h3><p>在js中，js任务是单线程的，所有异步任务都会等待主线程任务执行完后再执行。在这里，每当一个异步任务执行完，会返回一个回调函数进入异步任务队列中，当所有同步任务（主线程）执行结束，才开始执行任务队列中的会调函数，如果回调函数中存在异步任务，就会再次等待异步任务执行，返回的回调函数继续回到回调函数队列中。这就是事件循环。</p>
+<h3 id="用ES6类写一个Queue类，仿队列："><a href="#用ES6类写一个Queue类，仿队列：" class="headerlink" title="用ES6类写一个Queue类，仿队列："></a>用ES6类写一个Queue类，仿队列：</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span></span>&#123;<br>    <span class="hljs-keyword">constructor</span>&#123;<br>        <span class="hljs-keyword">this</span>.queue=[]<br>    &#125;<br>    push(arr)&#123;<br>        <span class="hljs-keyword">this</span>.queue.push(arr)<br>    &#125;<br>    shift()&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.queue.shift()<br>    &#125;<br>    peek () &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.queue[<span class="hljs-number">0</span>]<br>	&#125;<br>    length () &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.queue.length<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="队列计算最近请求次数-题号-933"><a href="#队列计算最近请求次数-题号-933" class="headerlink" title="队列计算最近请求次数 题号:933"></a>队列计算最近请求次数 题号:933</h3><p>写一个 RecentCounter 类来计算特定时间范围内最近的请求。</p>
+<p>请你实现 RecentCounter 类：</p>
+<p>RecentCounter() 初始化计数器，请求数为 0 。<br>int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。<br>保证 每次对 ping 的调用都使用比之前更大的 t 值。</p>
+<p>示例：</p>
+<p>输入：<br>[“RecentCounter”, “ping”, “ping”, “ping”, “ping”]<br>[[], [1], [100], [3001], [3002]]<br>输出：<br>[null, 1, 2, 3, 3]</p>
+<p>解释：<br>RecentCounter recentCounter = new RecentCounter();<br>recentCounter.ping(1);     // requests = [1]，范围是 [-2999,1]，返回 1<br>recentCounter.ping(100);   // requests = [1, 100]，范围是 [-2900,100]，返回 2<br>recentCounter.ping(3001);  // requests = [1, 100, 3001]，范围是 [1,3001]，返回 3<br>recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002]，范围是 [2,3002]，返回 3
+ </p>
+<p>提示：</p>
+<p>1 &lt;= t &lt;= 109<br>保证每次对 ping 调用所使用的 t 值都 严格递增<br>至多调用 ping 方法 104 次</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-recent-calls">https://leetcode-cn.com/problems/number-of-recent-calls</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-keyword">var</span> RecentCounter = function () &#123;<br>    <span class="hljs-keyword">this</span>.q = []   <span class="hljs-comment">//初始化一个队列q</span><br>&#125;;<br><br><span class="hljs-comment">/** </span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;number&#125; t</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> &#123;number&#125;</span><br><span class="hljs-comment"> */</span><br>RecentCounter.prototype.ping = function (t) &#123;<br>    <span class="hljs-keyword">this</span>.q.push(t)<span class="hljs-comment">//将每次的输入进入队列</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">this</span>.q[<span class="hljs-number">0</span>] &lt; t - <span class="hljs-number">3000</span>) &#123;<span class="hljs-comment">//如果队首的元素小于进入元素-3000</span><br>        <span class="hljs-keyword">this</span>.q.shift()          <span class="hljs-comment">//则队首元素出队</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.q.length        <span class="hljs-comment">//返回队列长度即是最近的请求次数</span><br>&#125;;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Your RecentCounter object will be instantiated and called as such:</span><br><span class="hljs-comment"> * var obj = new RecentCounter()</span><br><span class="hljs-comment"> * var param_1 = obj.ping(t)</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
+<p>思路：<br>对每次进入队列的元素和队首元素比对，如果队首的元素小于进入元素-3000，则队首元素出队。<br>返回队列长度，这样就得到了最近的请求次数</p>
+<h3 id="无重复字符的最长子串-题号-3"><a href="#无重复字符的最长子串-题号-3" class="headerlink" title="无重复字符的最长子串 题号:3"></a>无重复字符的最长子串 题号:3</h3><p>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<p>示例 1:</p>
+<p>输入: s = “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
+<p>输入: s = “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
+<p>输入: s = “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。<br>示例 4:</p>
+<p>输入: s = “”<br>输出: 0</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs coq">function lengthOfLongestSubstring(s: string): number &#123;<br>    const len=s.length<br>    <span class="hljs-keyword">if</span>(len&lt;=<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> len<br>    <span class="hljs-keyword">let</span> res=<span class="hljs-number">0</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-built_in">left</span>=<span class="hljs-number">0</span>,<span class="hljs-built_in">right</span>=<span class="hljs-number">0</span><br>    const <span class="hljs-built_in">set</span>=new <span class="hljs-keyword">Set</span>()<br>    while(<span class="hljs-built_in">right</span>&lt;len)&#123;<br>           <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">set</span>.has(s[<span class="hljs-built_in">right</span>]))&#123;<br>               <span class="hljs-built_in">set</span>.add(s[<span class="hljs-built_in">right</span>])<br>               res=Math.max(res,<span class="hljs-built_in">right</span>-<span class="hljs-built_in">left</span>+<span class="hljs-number">1</span>)<br>               <span class="hljs-built_in">right</span>++<br>           &#125;<span class="hljs-keyword">else</span>&#123;<br>               <span class="hljs-built_in">set</span>.delete(s[<span class="hljs-built_in">left</span>])<br>               <span class="hljs-built_in">left</span>++<br>           &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>思路：<br>利用滑动窗口，含有则左变前进，不含则右边前进。<br>取最大长度直到右指针到头。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/06/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法与数据结构day3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/04/HTML%E5%9B%9E%E9%A1%BE/">
+                        <span class="hidden-mobile">HTML回顾总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

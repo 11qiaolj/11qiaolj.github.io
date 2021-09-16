@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>HTML回顾总结 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="HTML回顾总结">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-04 19:00" pubdate>
+        2021年4月4日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTML回顾总结</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="HTML知识回顾"><a href="#HTML知识回顾" class="headerlink" title="HTML知识回顾"></a>HTML知识回顾</h1><p>由于HTML的知识点相对较少，用一篇文章简单总结一下</p>
+<h3 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h3><p>按我的理解来说，就是给原来的div起名字，这是HTML5新推出的几种标签。<br>以前都是<code>&lt;div class=&quot;header&quot;&gt;</code>现在直接就叫<code>&lt;header&gt;</code>,这样做得好处就是：<br>1.可以更方便开发者理解里面的内容的意义————增加代码可读性。<br>2.有助于搜索引擎的脚本对内容收集————SEO搜索引擎优化。</p>
+<p>注意：不仅仅是H5新推出的header，footer算作语义化，h1,p,li等等这些有含义的标签都属于HTML语义化。</p>
+<p>header页面头部    footer页面脚部    main页面主体       hgroup标题组    nav导航栏<br>article独立内容   aside侧边栏      section文档区域    figure图像    figcaption图像标题<br>datalist选项列表  details，summary详情区     progress，meter进度条  time 时间   mark标记</p>
+<p>刚刚学习scss，学到了使用BEM命名规则————block__element–modifier<br>简单来说就是，’父__子–状态’的命名方法能使代码结构更清晰，便于维护。</p>
+<h3 id="块级元素和内联元素"><a href="#块级元素和内联元素" class="headerlink" title="块级元素和内联元素"></a>块级元素和内联元素</h3><p>这个大体来说就是span和div的区别。<br><strong>块级元素</strong>：div，h1-h6，table，ul，li，p等，他们独占一行。有宽和高，也会有边框。<br><strong>内联元素</strong>：span，a，img等，他们会挨着，直到占满一排才换行，宽和高根据内容而定。</p>
+<p>可以通过修改css的dispaly:block或dispaly:inline来使块级元素和内联元素相互转化<br>也可以通过display:inline-block来使他们成为行内块元素，既可以设定宽高，又不会独占一行而把其他<em>小伙伴</em>挤下去</p>
+<h3 id="表布局"><a href="#表布局" class="headerlink" title="表布局"></a>表布局</h3><p>表table由表，列组，列，行组，行，单元格自底向上构成，</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-params">&lt;table border=&quot;<span class="hljs-number">1</span>&quot;&gt;</span><span class="hljs-comment">//表格</span><br>  <span class="hljs-params">&lt;tr&gt;</span><br>    <span class="hljs-params">&lt;th&gt;</span>Month<span class="hljs-params">&lt;/th&gt;</span><span class="hljs-comment">//表标题——列上方的头</span><br>    <span class="hljs-params">&lt;th&gt;</span>Savings<span class="hljs-params">&lt;/th&gt;</span><br>  <span class="hljs-params">&lt;/tr&gt;</span><br>  <span class="hljs-params">&lt;tr&gt;</span>             <span class="hljs-comment">//表行</span><br>    <span class="hljs-params">&lt;td&gt;</span>January<span class="hljs-params">&lt;/td&gt;</span><span class="hljs-comment">//每个单元格中的内容</span><br>    <span class="hljs-params">&lt;td&gt;</span>$<span class="hljs-number">100</span><span class="hljs-params">&lt;/td&gt;</span><br>  <span class="hljs-params">&lt;/tr&gt;</span><br>  <span class="hljs-params">&lt;tr&gt;</span><br>    <span class="hljs-params">&lt;td&gt;</span>February<span class="hljs-params">&lt;/td&gt;</span><br>    <span class="hljs-params">&lt;td&gt;</span>$<span class="hljs-number">80</span><span class="hljs-params">&lt;/td&gt;</span><br>  <span class="hljs-params">&lt;/tr&gt;</span><br><span class="hljs-params">&lt;/table&gt;</span><br></code></pre></td></tr></table></figure>
+<p>这样的表格边框间会有空隙，视觉上不同与我们平时使用的表格，可以通过 border-collapse:collapse;的css代码来合并（塌陷）边框。<br>值得一提的是，塌陷边框的表格之间的边框颜色或形态会相互影响<br>具体的优先级是：<br>1.hidden大于一切;<br>2.之后宽的会覆盖窄的;<br>3.double大于solid……;<br>4.cell的大于row的大于row-group的……。</p>
+<h3 id="不常用的HTML标签"><a href="#不常用的HTML标签" class="headerlink" title="不常用的HTML标签"></a>不常用的HTML标签</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span>:删除线          <span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>:上标        <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>:下划线           <span class="hljs-tag">&lt;<span class="hljs-name">center</span>&gt;</span>:局中<br><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>和<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>都是加粗，但<span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>具有语义化     <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>和<span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>都是斜体，但<span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>具有语义化<br>引用标签：blockquote,q,abbr,address,cite<br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>和<span class="hljs-tag">&lt;<span class="hljs-name">wbr</span>&gt;</span>是换行和软换行       <span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>定义预格式化的文本     <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>源代码<br><span class="hljs-tag">&lt;<span class="hljs-name">map</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">area</span>&gt;</span>区域和热区域        <span class="hljs-tag">&lt;<span class="hljs-name">embed</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">object</span>&gt;</span> 嵌入多媒体   <span class="hljs-tag">&lt;<span class="hljs-name">audio</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">video</span>&gt;</span>是音乐和视频<br><span class="hljs-tag">&lt;<span class="hljs-name">rudy</span>&gt;</span>和<span class="hljs-tag">&lt;<span class="hljs-name">rt</span>&gt;</span>文字标签与注解      <span class="hljs-tag">&lt;<span class="hljs-name">bdo</span>&gt;</span>可以让文字反向     <span class="hljs-tag">&lt;<span class="hljs-name">link</span>&gt;</span>和<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>&gt;</span>标签则分别代表了链接和辅助信息<br></code></pre></td></tr></table></figure>
+
+<h3 id="input表单汇总"><a href="#input表单汇总" class="headerlink" title="input表单汇总"></a>input表单汇总</h3><p>在所有input标签外，要定义一个form标签<br>form标签有如下属性（常用）</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs oxygene">name        规定表单名称<br>action      当表单提交时，向哪个地址提交<br><span class="hljs-function"><span class="hljs-keyword">method</span>      当表单提交时，传递数据的方式（<span class="hljs-title">get</span>/<span class="hljs-title">post</span>）</span><br><span class="hljs-function"><span class="hljs-title">target</span>      当表单提交时，在何处打开 <span class="hljs-title">action</span> <span class="hljs-title">URL</span>。（_<span class="hljs-title">blank</span>/_<span class="hljs-title">self</span>)</span><br></code></pre></td></tr></table></figure>
+<p>我们可以在form内定义我们想要的input表单<br>有这些input标签内的type属性可供选择，来生成不同的表单(常用)</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">bbutton	       定义可点击的按钮（通常与 JavaScript 一起使用来启动脚本）。<br>checkbox       定义复选框。<br>color   	   定义拾色器。<br><span class="hljs-built_in">date</span>           定义 <span class="hljs-built_in">date</span> 控件（包括年、月、日，不包括时间）。<br>email   	   定义用于 e-mail 地址的字段。<br><span class="hljs-built_in">file</span>	       定义文件选择字段和 <span class="hljs-string">&quot;浏览...&quot;</span> 按钮，供文件上传。<br>image	       定义图像作为提交按钮。<br><span class="hljs-built_in">number</span>  	   定义用于输入数字的字段。<br>password	   定义密码字段（字段中的字符会被遮蔽）。<br>radio	       定义单选按钮。<br>reset	       定义重置按钮（重置所有的表单值为默认值）。<br>search  	   定义用于输入搜索字符串的文本字段。<br>submit	       定义提交按钮。<br>tel   	       定义用于输入电话号码的字段。<br><span class="hljs-keyword">text</span>	       定义一个单行的文本字段（默认宽度为 <span class="hljs-number">20</span> 个字符）。<br><span class="hljs-built_in">time</span>  	       定义用于输入时间的控件（不带时区）。<br>url   	       定义用于输入 <span class="hljs-built_in">URL</span> 的字段。<br></code></pre></td></tr></table></figure>
+<p>在这些表单中，也有不同的属性可以选择（常用）</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">checked    单选和复选框的选中状态<br><span class="hljs-built_in">auto</span>focus  表单自动获得焦点<br>disabled   禁用<br>maxlength  最大字符数<br>name       表单名称<br>value      表单内容 <br></code></pre></td></tr></table></figure>
+
+
+<h3 id="置换元素"><a href="#置换元素" class="headerlink" title="置换元素"></a>置换元素</h3><p>这是最近看到的一个html方面遗漏的概念</p>
+<p>面试题是这样问的：</p>
+<p>为什么img是行内元素，但是可以设置宽高呢？</p>
+<p>原因是image属于html中的置换元素，置换元素可以通过属性来决定他表现的样式。</p>
+<p>常见的置换元素有：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">img</span>    <span class="hljs-selector-tag">input</span>    <span class="hljs-selector-tag">textarea</span>    select    <span class="hljs-selector-tag">iframe</span>    <span class="hljs-selector-tag">canvas</span><br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/">知识回顾</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/05/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法与数据结构day2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/04/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day1/">
+                        <span class="hidden-mobile">算法与数据结构day1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>LeetCode（一） - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="LeetCode（一）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-01 17:41" pubdate>
+        2021年4月1日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LeetCode（一）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：3 个月前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="leetcode刷题记录"><a href="#leetcode刷题记录" class="headerlink" title="leetcode刷题记录"></a>leetcode刷题记录</h1><h3 id="笨阶乘-题号-1006"><a href="#笨阶乘-题号-1006" class="headerlink" title="笨阶乘 题号:1006"></a>笨阶乘 题号:1006</h3><p>通常，正整数 n 的阶乘是所有小于或等于 n 的正整数的乘积。例如，factorial(10) = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1。</p>
+<p>相反，我们设计了一个笨阶乘 clumsy：在整数的递减序列中，我们以一个固定顺序的操作符序列来依次替换原有的乘法操作符：乘法(*)，除法(/)，加法(+)和减法(-)。</p>
+<p>例如，clumsy(10) = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1。然而，这些运算仍然使用通常的算术运算顺序：我们在任何加、减步骤之前执行所有的乘法和除法步骤，并且按从左到右处理乘法和除法步骤。</p>
+<p>另外，我们使用的除法是地板除法（floor division），所以 10 * 9 / 8 等于 11。这保证结果是一个整数。</p>
+<p>实现上面定义的笨函数：给定一个整数 N，它返回 N 的笨阶乘。</p>
+<p> <br>示例 1：</p>
+<p>输入：4<br>输出：7<br>解释：7 = 4 * 3 / 2 + 1</p>
+<p>示例 2：</p>
+<p>输入：10<br>输出：12<br>解释：12 = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/clumsy-factorial">https://leetcode-cn.com/problems/clumsy-factorial</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs cpp">var clumsy = <span class="hljs-built_in">function</span> (N) &#123;<br>    <span class="hljs-keyword">const</span> stack = [N]<span class="hljs-comment">//初始栈中存入N</span><br>    <span class="hljs-keyword">for</span> (let i = N - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i--) &#123;<br>        let index = (N - i) % <span class="hljs-number">4</span>;<span class="hljs-comment">//用index来记录第几个计算的数据，四个为一个循环</span><br>        <span class="hljs-built_in"><span class="hljs-keyword">switch</span></span> (index) &#123;<span class="hljs-comment">//如果是*和/直接计算，如果是+和-，则压入栈中等待下一次计算</span><br>            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>                stack.<span class="hljs-built_in">push</span>(stack.<span class="hljs-built_in">pop</span>() * i);<span class="hljs-comment">//第一个计算的数为*</span><br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>                let clu = stack.<span class="hljs-built_in">pop</span>();<span class="hljs-comment">//这里做一个判断，若栈内的数是负，则需要向上取整</span><br>                stack.<span class="hljs-built_in">push</span>(clu &gt; <span class="hljs-number">0</span> ? Math.<span class="hljs-built_in">floor</span>(clu / i) : Math.<span class="hljs-built_in">ceil</span>(clu / i));<span class="hljs-comment">//第二个计算的数为/</span><br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:<br>                stack.<span class="hljs-built_in">push</span>(i);<span class="hljs-comment">//第三个计算的数为+</span><br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<br>                stack.<span class="hljs-built_in">push</span>(-i);<span class="hljs-comment">//第四个计算的数为-</span><br>                <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    let sum = <span class="hljs-number">0</span>;<br>    stack.forEach(element =&gt; &#123;<br>        <span class="hljs-comment">// console.log(element);</span><br>        sum += element;<br>    &#125;)<br>    <span class="hljs-keyword">return</span> sum;<span class="hljs-comment">//得到结果返回</span><br>&#125;;<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">clumsy</span>(<span class="hljs-number">4</span>));<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">clumsy</span>(<span class="hljs-number">10</span>));<br></code></pre></td></tr></table></figure>
+<p>思路：<br>将输入的数压入栈中，再将下一个数进行判断，乘或除则直接计算，加或减则继续压入栈中<br>当到0，则结束，将栈中元素相加，即为最终答案。</p>
+<h3 id="整数相加-题号-2"><a href="#整数相加-题号-2" class="headerlink" title="整数相加 题号:2"></a>整数相加 题号:2</h3><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
+<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
+<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例 1：<br>输入：l1 = [2,4,3], l2 = [5,6,4]<br>输出：[7,0,8]<br>解释：342 + 465 = 807.</p>
+<p>示例 2：<br>输入：l1 = [0], l2 = [0]<br>输出：[0]</p>
+<p>示例 3：<br>输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]<br>输出：[8,9,9,9,0,0,0,1]<br> <br>提示：<br>每个链表中的节点数在范围 [1, 100] 内<br>0 &lt;= Node.val &lt;= 9<br>题目数据保证列表表示的数字不含前导零</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/add-two-numbers">https://leetcode-cn.com/problems/add-two-numbers</a></p>
+<hr>
+<p>我的题解</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs lasso"><span class="hljs-built_in">var</span> addTwoNumbers = function(l1, l2) &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-built_in">stack</span> = <span class="hljs-literal">new</span> ListNode(<span class="hljs-string">&#x27;0&#x27;</span>) <span class="hljs-comment">// 创建一个头链表用于保存结果</span><br>    <span class="hljs-keyword">let</span> head = <span class="hljs-built_in">stack</span> <span class="hljs-comment">// 保存头链表的位置用于最后的链表返回</span><br>    <span class="hljs-keyword">let</span> add=<span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> (add|| l1 || l2) &#123; <span class="hljs-comment">//当l1，l2，add有存在时，才会进行</span><br>        <span class="hljs-keyword">let</span> v1 = l1===<span class="hljs-built_in">null</span>?<span class="hljs-number">0</span>:l1.val <span class="hljs-comment">//长度不一样时，空则补0</span><br>        <span class="hljs-keyword">let</span> v2 = l2===<span class="hljs-built_in">null</span>?<span class="hljs-number">0</span>:l2.val<br>        <span class="hljs-keyword">let</span> <span class="hljs-keyword">sum</span> = v1 + v2+add<br>         add=<span class="hljs-keyword">sum</span>&gt;=<span class="hljs-number">10</span>?<span class="hljs-number">1</span>:<span class="hljs-number">0</span>  <span class="hljs-comment">//若大于10，则进位</span><br>        <span class="hljs-built_in">stack</span>.next = <span class="hljs-literal">new</span> ListNode(<span class="hljs-keyword">sum</span> % <span class="hljs-number">10</span>)<br>        <span class="hljs-built_in">stack</span> = <span class="hljs-built_in">stack</span>.next<br>        <span class="hljs-keyword">if</span>(l1) l1 = l1.next <br>        <span class="hljs-keyword">if</span>(l2) l2 = l2.next <span class="hljs-comment">//指向下一个</span><br>    &#125;<br><br><br>    <span class="hljs-keyword">return</span> head.next <span class="hljs-comment">//返回计算结果，之所以用head.next是因为head中保存的第一个节点是刚开始定义的“0”</span><br>&#125;;<br><br></code></pre></td></tr></table></figure>
+<p>思路：<br>创建一个链表，将两个数的和压入栈中（大于10则取个位，然后进位），如果两个数组长度不等，则用0代替。<br>依次计算，最终得到结果链表。</p>
+<h3 id="寻找两个正序数组的中位数-题号：4"><a href="#寻找两个正序数组的中位数-题号：4" class="headerlink" title="寻找两个正序数组的中位数 题号：4"></a>寻找两个正序数组的中位数 题号：4</h3><p>给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。</p>
+<p> </p>
+<p>示例 1：</p>
+<p>输入：nums1 = [1,3], nums2 = [2]<br>输出：2.00000<br>解释：合并数组 = [1,2,3] ，中位数 2<br>示例 2：</p>
+<p>输入：nums1 = [1,2], nums2 = [3,4]<br>输出：2.50000<br>解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5<br>示例 3：</p>
+<p>输入：nums1 = [0,0], nums2 = [0,0]<br>输出：0.00000<br>示例 4：</p>
+<p>输入：nums1 = [], nums2 = [1]<br>输出：1.00000<br>示例 5：</p>
+<p>输入：nums1 = [2], nums2 = []<br>输出：2.00000
+ </p>
+<p>提示：</p>
+<p>nums1.length == m<br>nums2.length == n<br>0 &lt;= m &lt;= 1000<br>0 &lt;= n &lt;= 1000<br>1 &lt;= m + n &lt;= 2000<br>-106 &lt;= nums1[i], nums2[i] &lt;= 106</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays">https://leetcode-cn.com/problems/median-of-two-sorted-arrays</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> findMedianSortedArrays = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums1, nums2</span>) </span>&#123;<br>    <span class="hljs-keyword">const</span> arr = nums1.concat(...nums2).sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">return</span> a - b<br>    &#125;)<br>    <span class="hljs-keyword">const</span> getMid=<span class="hljs-function">(<span class="hljs-params">arr</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">if</span>(arr.length%<span class="hljs-number">2</span>===<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-keyword">return</span> arr[<span class="hljs-built_in">Math</span>.floor(arr.length/<span class="hljs-number">2</span>)];<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">return</span> (arr[arr.length/<span class="hljs-number">2</span>-<span class="hljs-number">1</span>]+arr[arr.length/<span class="hljs-number">2</span>])/<span class="hljs-number">2</span>;<br>    &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> getMid(arr);<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>这道题用js的数组合并和排序意外的简单<br>合并我用了es6的解构赋值的写法。</p>
+<h3 id="剑指-Offer-03-数组中重复的数字"><a href="#剑指-Offer-03-数组中重复的数字" class="headerlink" title="剑指 Offer 03. 数组中重复的数字"></a>剑指 Offer 03. 数组中重复的数字</h3><p>找出数组中重复的数字。</p>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+<p>示例 1：</p>
+<p>输入：<br>[2, 3, 1, 0, 2, 5, 3]<br>输出：2 或 3 
+ </p>
+<p>限制：</p>
+<p>2 &lt;= n &lt;= 100000</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof">https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;number[]&#125;</span> <span class="hljs-variable">nums</span></span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return <span class="hljs-type">&#123;number&#125;</span></span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">var</span> findRepeatNumber = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;<br>    <span class="hljs-keyword">const</span> arr=nums.sort(<span class="hljs-function">(<span class="hljs-params">a,b</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">return</span> a-b<br>    &#125;)<br>    <span class="hljs-keyword">let</span> n=-<span class="hljs-number">1</span><br>    <span class="hljs-built_in">console</span>.log(arr)<br>    arr.reduce(<span class="hljs-function">(<span class="hljs-params">p,c,index</span>)=&gt;</span>&#123;<br>        <span class="hljs-built_in">console</span>.log(p,c)<br>        <span class="hljs-keyword">if</span>(p===c)&#123;  <br>            n=p<br>        &#125;<br>        <span class="hljs-keyword">return</span> c<br>    &#125;,-<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> n<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="剑指-Offer-04-二维数组中的查找"><a href="#剑指-Offer-04-二维数组中的查找" class="headerlink" title="剑指 Offer 04. 二维数组中的查找"></a>剑指 Offer 04. 二维数组中的查找</h3><p>在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p> </p>
+<p>示例:</p>
+<p>现有矩阵 matrix 如下：</p>
+<p>[<br>  [1,   4,  7, 11, 15],<br>  [2,   5,  8, 12, 19],<br>  [3,   6,  9, 16, 22],<br>  [10, 13, 14, 17, 24],<br>  [18, 21, 23, 26, 30]<br>]<br>给定 target = 5，返回 true。</p>
+<p>给定 target = 20，返回 false。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof">https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs zephir"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;number[][]&#125; matrix</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;number&#125; target</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> &#123;boolean&#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">var</span> findNumberIn2DArray = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(matrix, target)</span> </span>&#123;<br>    <span class="hljs-keyword">let</span> i=<span class="hljs-keyword">false</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> n in matrix)&#123;<br>       <span class="hljs-keyword">if</span>( matrix[n].includes(target))&#123;<br>           i=<span class="hljs-keyword">true</span><br>       &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> i<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/leetcode/">leetcode</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/04/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法与数据结构day1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/01/My-Firet-Post/">
+                        <span class="hidden-mobile">My Starting Point</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

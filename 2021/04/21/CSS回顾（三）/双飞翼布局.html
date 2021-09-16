@@ -1,0 +1,57 @@
+---
+title: CSS回顾（三）双飞翼布局
+date: 2021-04-21 11:39:14
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双飞翼布局</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ff {
+        height: 200px;
+        float: left;
+        /* text-align: center; */
+    }
+
+    .main {
+        height: 200px;
+        width: 100%;
+        background-color: #ccc;
+    }
+
+    .left {
+        width: 200px;
+        background-color: yellow;
+        margin-left: -100%;
+    }
+
+    .mid {
+        height: 200px;
+        margin: 0 230px 0 200px;
+    }
+
+    .right {
+        width: 230px;
+        background-color: skyblue;
+        margin-left: -230px;
+    }
+</style>
+
+<body>
+    <div class="main ff">
+        <div class="mid">中</div>
+    </div>
+    <div class="left ff">左</div>
+    <div class="right ff">右</div>
+</body>
+
+</html>

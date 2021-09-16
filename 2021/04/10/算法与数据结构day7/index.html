@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon1.jpeg">
+  <link rel="icon" href="/images/icon1.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="乔辣鸡">
+  <meta name="keywords" content="">
+  
+  <title>算法与数据结构day7 - 乔辣鸡的前端之路</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"11qiaolj.github.io","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Do it now!</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/banner5.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="算法与数据结构day7">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      乔辣鸡
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-10 22:10" pubdate>
+        2021年4月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">算法与数据结构day7</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：5 个月前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="day7-图graph"><a href="#day7-图graph" class="headerlink" title="day7 图graph"></a>day7 图graph</h2><p>图是网络结构抽象模型，通过边连接节点来形成<br>在js中，通过object和array来表示这个数据结构：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dts">const graph=&#123;<br><span class="hljs-symbol">    A:</span>[<span class="hljs-string">&quot;B&quot;</span>],<br><span class="hljs-symbol">    B:</span>[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;D&quot;</span>],<br><span class="hljs-symbol">    C:</span>[<span class="hljs-string">&quot;E&quot;</span>],<br><span class="hljs-symbol">    D:</span>[<span class="hljs-string">&quot;A&quot;</span>],<br><span class="hljs-symbol">    E:</span>[<span class="hljs-string">&quot;D&quot;</span>]<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="深度优先遍历dfs"><a href="#深度优先遍历dfs" class="headerlink" title="深度优先遍历dfs"></a>深度优先遍历dfs</h3><p>1.访问根节点<br>2.对根节点没访问过的节点进行深度优先遍历</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> visited=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>();<span class="hljs-comment">//用来记录访问过的节点</span><br><span class="hljs-keyword">const</span> dfs=<span class="hljs-function">(<span class="hljs-params">n</span>)=&gt;</span>&#123;<span class="hljs-comment">//n为根节点</span><br>    <span class="hljs-built_in">console</span>.log(n);<br>    visited.add(n);<br>    graph[n].forEach(<span class="hljs-function">(<span class="hljs-params">c</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">if</span>(!visited.has(c))&#123;<br>            dfs(c);<br>        &#125;<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="广度优先遍历wfs"><a href="#广度优先遍历wfs" class="headerlink" title="广度优先遍历wfs"></a>广度优先遍历wfs</h3><p>1.新建一个队列，将根节点入队<br>2.把队头出队并访问<br>3.把队头没访问的相邻节点入队<br>4.重复2，3步，直到队列空。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> visited=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>();<span class="hljs-comment">//用来记录访问过的节点</span><br><span class="hljs-keyword">const</span> q=[<span class="hljs-number">2</span>];<br><span class="hljs-keyword">while</span>(q.length)&#123;<br>    <span class="hljs-keyword">const</span> n=q.shift();<br>    <span class="hljs-built_in">console</span>.log(n);<br>    graph[n].forEach(<span class="hljs-function">(<span class="hljs-params">c</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">if</span>(!visited.has(c))&#123;<br>            q.push(c);<br>            visited.add(n);<br>        &#125;<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="有效的数字-题号：65"><a href="#有效的数字-题号：65" class="headerlink" title="有效的数字 题号：65"></a>有效的数字 题号：65</h3><p>有效数字（按顺序）可以分成以下几个部分：</p>
+<p>一个 小数 或者 整数<br>（可选）一个 ‘e’ 或 ‘E’ ，后面跟着一个 整数<br>小数（按顺序）可以分成以下几个部分：</p>
+<p>（可选）一个符号字符（’+’ 或 ‘-‘）<br>下述格式之一：<br>至少一位数字，后面跟着一个点 ‘.’<br>至少一位数字，后面跟着一个点 ‘.’ ，后面再跟着至少一位数字<br>一个点 ‘.’ ，后面跟着至少一位数字<br>整数（按顺序）可以分成以下几个部分：</p>
+<p>（可选）一个符号字符（’+’ 或 ‘-‘）<br>至少一位数字<br>部分有效数字列举如下：</p>
+<p>[“2”, “0089”, “-0.1”, “+3.14”, “4.”, “-.9”, “2e10”, “-90E3”, “3e+7”, “+6e-1”, “53.5e93”, “-123.456e789”]<br>部分无效数字列举如下：</p>
+<p>[“abc”, “1a”, “1e”, “e3”, “99e2.5”, “–6”, “-+3”, “95a54e53”]<br>给你一个字符串 s ，如果 s 是一个 有效数字 ，请返回 true 。</p>
+<p> </p>
+<p>示例 1：</p>
+<p>输入：s = “0”<br>输出：true<br>示例 2：</p>
+<p>输入：s = “e”<br>输出：false<br>示例 3：</p>
+<p>输入：s = “.”<br>输出：false<br>示例 4：</p>
+<p>输入：s = “.1”<br>输出：true
+ </p>
+<p>提示：</p>
+<p>1 &lt;= s.length &lt;= 20<br>s 仅含英文字母（大写和小写），数字（0-9），加号 ‘+’ ，减号 ‘-‘ ，或者点 ‘.’ 。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-number">https://leetcode-cn.com/problems/valid-number</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> isNumber = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s</span>) </span>&#123;<br>    <span class="hljs-keyword">const</span> g=&#123;<br>        <span class="hljs-number">0</span>:&#123;<span class="hljs-string">&#x27;blank&#x27;</span>:<span class="hljs-number">0</span>,<span class="hljs-string">&#x27;sign&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;.&#x27;</span>:<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">6</span>&#125;,<br>        <span class="hljs-number">1</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">6</span>,<span class="hljs-string">&#x27;.&#x27;</span>:<span class="hljs-number">2</span>&#125;,<br>        <span class="hljs-number">2</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">3</span>&#125;,<br>        <span class="hljs-number">3</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;e&#x27;</span>:<span class="hljs-number">4</span>&#125;,<br>        <span class="hljs-number">4</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">5</span>,<span class="hljs-string">&#x27;sign&#x27;</span>:<span class="hljs-number">7</span>&#125;,<br>        <span class="hljs-number">5</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">5</span>&#125;,<br>        <span class="hljs-number">6</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">6</span>,<span class="hljs-string">&#x27;.&#x27;</span>:<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;e&#x27;</span>:<span class="hljs-number">4</span>&#125;,<br>        <span class="hljs-number">7</span>:&#123;<span class="hljs-string">&#x27;digit&#x27;</span>:<span class="hljs-number">5</span>&#125;<br>    &#125;;<br>    <span class="hljs-keyword">let</span> state=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(c <span class="hljs-keyword">of</span> s.trim())&#123;<br>        <span class="hljs-keyword">if</span>(c&gt;=<span class="hljs-string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>            c=<span class="hljs-string">&#x27;digit&#x27;</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(c===<span class="hljs-string">&#x27; &#x27;</span>)&#123;<br>            c=<span class="hljs-string">&#x27;blank&#x27;</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(c===<span class="hljs-string">&#x27;+&#x27;</span>||c===<span class="hljs-string">&#x27;-&#x27;</span>)&#123;<br>            c=<span class="hljs-string">&#x27;sign&#x27;</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(c===<span class="hljs-string">&#x27;E&#x27;</span>)&#123;<br>            c=<span class="hljs-string">&#x27;e&#x27;</span>;<br>        &#125;<br>        state=g[state][c];<br>        <span class="hljs-keyword">if</span> (state===<span class="hljs-literal">undefined</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(state===<span class="hljs-number">3</span>||state==<span class="hljs-number">5</span>||state==<span class="hljs-number">6</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br><br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>思路：设计一个图，分别根据下一个输入的数字，字符，字母来通向图的下一点，当读取结束时，返回所在点的true或false。</p>
+<h3 id="拷贝图-题号：133"><a href="#拷贝图-题号：133" class="headerlink" title="拷贝图 题号：133"></a>拷贝图 题号：133</h3><p>给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。</p>
+<p>图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。</p>
+<p>class Node {<br>    public int val;<br>    public List<Node> neighbors;<br>}
+ </Node></p>
+<p>测试用例格式：</p>
+<p>简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val = 1），第二个节点值为 2（val = 2），以此类推。该图在测试用例中使用邻接列表表示。</p>
+<p>邻接列表 是用于表示有限图的无序列表的集合。每个列表都描述了图中节点的邻居集。</p>
+<p>给定节点将始终是图中的第一个节点（值为 1）。你必须将 给定节点的拷贝 作为对克隆图的引用返回。</p>
+<p>示例 1：<br><img src="/2021/04/10/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day7/lc9.png" srcset="/img/loading.gif" lazyload alt="解释"></p>
+<p>输入：adjList = [[2,4],[1,3],[2,4],[1,3]]<br>输出：[[2,4],[1,3],[2,4],[1,3]]<br>解释：<br>图中有 4 个节点。<br>节点 1 的值是 1，它有两个邻居：节点 2 和 4 。<br>节点 2 的值是 2，它有两个邻居：节点 1 和 3 。<br>节点 3 的值是 3，它有两个邻居：节点 2 和 4 。<br>节点 4 的值是 4，它有两个邻居：节点 1 和 3 。<br>示例 2：</p>
+<p>输入：adjList = [[]]<br>输出：[[]]<br>解释：输入包含一个空列表。该图仅仅只有一个值为 1 的节点，它没有任何邻居。<br>示例 3：</p>
+<p>输入：adjList = []<br>输出：[]<br>解释：这个图是空的，它不含任何节点。<br>示例 4：</p>
+<p>输入：adjList = [[2],[1]]<br>输出：[[2],[1]]
+ </p>
+<p>提示：</p>
+<p>节点数不超过 100 。<br>每个节点值 Node.val 都是唯一的，1 &lt;= Node.val &lt;= 100。<br>无向图是一个简单图，这意味着图中没有重复的边，也没有自环。<br>由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居。<br>图是连通图，你可以从给定节点访问到所有节点。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/clone-graph">https://leetcode-cn.com/problems/clone-graph</a></p>
+<hr>
+<p>我的题解：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">var cloneGraph = function(<span class="hljs-keyword">node</span><span class="hljs-title">) &#123;</span><br><span class="hljs-title">        if</span>(!<span class="hljs-keyword">node</span><span class="hljs-title">)return</span>;<br>        const <span class="hljs-attr">visited=</span>new Map();<br>        const <span class="hljs-attr">dfs=</span>(n)=&gt;&#123;<br>            const <span class="hljs-attr">nCopy=</span>new <span class="hljs-keyword">Node</span><span class="hljs-title">(n</span>.val);<br>            visited.set(n,nCopy);<br>            (n.neighbors||[]).forEach(<span class="hljs-attr">nei=</span>&gt;&#123;<br>                if(!visited.has(nei))&#123;<br>                    dfs(nei);<br>                &#125;<br>                nCopy.neighbors.push(visited.get(nei));<br>            &#125;)<br>        &#125;<br>        dfs(<span class="hljs-keyword">node</span><span class="hljs-title">);</span><br><span class="hljs-title">        return</span> visited.get(<span class="hljs-keyword">node</span><span class="hljs-title">);</span><br><span class="hljs-title">&#125;;</span><br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/11/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法与数据结构day8</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/09/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84day6/">
+                        <span class="hidden-mobile">算法与数据结构day6</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
