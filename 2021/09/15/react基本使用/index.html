@@ -18,7 +18,7 @@
   <meta name="author" content="乔辣鸡">
   <meta name="keywords" content="">
   
-  <title>My Starting Point - 乔辣鸡的前端之路</title>
+  <title>react基本使用 - 乔辣鸡的前端之路</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -134,7 +134,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="My Starting Point">
+            <span class="h2" id="subtitle" title="react基本使用">
               
             </span>
 
@@ -161,7 +161,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      2k 字
     </span>
   
 
@@ -192,11 +192,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">My Starting Point</h1>
+            <h1 style="display: none">react基本使用</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 小时前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -295,6 +295,38 @@
 <p>这样的声明式开发明显极大的改善了前端的开发方式，也很快在市场中占据主流</p>
 <p>声明式开发离不开虚拟DOM的出现。种种新技术的支持，才让react这个框架真正的实现了理想的前端开发模式。</p>
 <p>下一章将带来react 的原理解析</p>
+<h3 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h3><p>Hooks为函数式组件提供了state，effect等功能，使得函数组件能够投入到开发中。</p>
+<p>并且react本身是提倡函数式编程的。</p>
+<h4 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h4><p>提供state给函数式组件，让其可以拥有状态。</p>
+<p>要注意的是，useState和setState一样，一定要使用不可变值。这是react的基本概念。</p>
+<p>useState括号内可以对值初始化，但是仅能初始化一次。</p>
+<h4 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h4><p>useEffect为函数组件提供处理副作用的功能，这让纯函数的功能更加丰富。</p>
+<p>useEffect的第二个参数表示依赖的值</p>
+<p>我们通过依赖空[]来模拟，ComponentDidMount。</p>
+<p>再通过useEffect的return来模拟，ComponentWillUnmount。</p>
+<p>我们也可以在[]间添加state来监控某些数据的变化。</p>
+<p>注意，在useEffect里setState可能会造成死循环。</p>
+<p>同时，useEffect也不要依赖引用类型，依赖引用类型同样会无限循环。</p>
+<p>我们在使用useEffect时，他会形成一个闭包，如果不在[]中加入依赖，那么useEffect里监听的state将不是最新的。</p>
+<h4 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h4><p>useRef创建一个“盒子”来保持一个变量。</p>
+<p>这个变量不会触发视图更新，我们可以通过useRef来存储一些东西</p>
+<ul>
+<li>存储dom节点</li>
+<li>存储定时器</li>
+<li>存储与视图无关的变量</li>
+</ul>
+<h4 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h4><p>提供context来使变量可以跨层级传递</p>
+<h4 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h4><p>提供一个高级的State，通过不同的方法修改State。</p>
+<p>注意的是，useReducer与Redux并不相同</p>
+<p>useReducer只管理当前组件的状态，而Redux是全局的状态管理。</p>
+<h4 id="useMemo和useCallback"><a href="#useMemo和useCallback" class="headerlink" title="useMemo和useCallback"></a>useMemo和useCallback</h4><p>是性能优化方案，通过这两个函数包裹的变量和函数，仅会在依赖的值发生改变时触发更新。</p>
+<p>子组件需要用memo包裹，父组件更新不一定会更新子组件（同SCU）</p>
+<h4 id="useImperativeHandle"><a href="#useImperativeHandle" class="headerlink" title="useImperativeHandle"></a>useImperativeHandle</h4><p>使用这个函数，配合forwardRef。</p>
+<p>将实例方法暴露给父组件，为父组件传入的ref提供一些方法。</p>
+<h4 id="自定义Hooks"><a href="#自定义Hooks" class="headerlink" title="自定义Hooks"></a>自定义Hooks</h4><p>内部可以使用Hooks</p>
+<p>通过使用自定义Hooks对代码的重复逻辑进行解耦。</p>
+<p>相对于Class组件中的HOC和render，是较为合理的逻辑复用方案</p>
+<h4 id="Hooks规则"><a href="#Hooks规则" class="headerlink" title="Hooks规则"></a>Hooks规则</h4><p>严格依赖调用顺序，不可以在循环，判断中使用Hooks。</p>
 
             </div>
             <hr>
